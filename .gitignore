@@ -17,4 +17,7 @@
 node_modules
 npm-debug.log
 nbproject/
+nbproject/private/
 data/
+data/*.sqlite
+data/*.json
