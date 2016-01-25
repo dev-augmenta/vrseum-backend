@@ -33,7 +33,7 @@ module.exports = function(app) {
 
   // create coffee shops
   function createCoffeeShops(cb) {
-    mysqlDs.automigrate('CoffeeShop', function(err) {
+    mongolab.automigrate('CoffeeShop', function(err) {
       if (err) return cb(err);
 
       app.models.CoffeeShop.create([
