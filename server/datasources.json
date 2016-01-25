@@ -11,6 +11,19 @@
 		"username": "vrseum_admin",
 		"password": "PieroAugmenta15",
 		"name": "mongolab",
-		"connector": "mongodb"
+		"connector": "mongodb",
+		"server": {
+			"auto_reconnect": true,
+			"reconnectTries": 100,
+			"reconnectInterval": 1000
+		}
+	},
+	"storage": {
+		"name": "storage",
+		"connector": "loopback-component-storage",
+		"provider": "amazon",
+		"region": "eu-central-1",
+		"key": "bjijxfFMR2ue7KlgsgVveUAyc2YaBnhmuW4+rQSG",
+		"keyId": "AKIAJWIFE6NBOUEKJRZQ"
 	}
 }

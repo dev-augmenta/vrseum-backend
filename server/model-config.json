@@ -5,13 +5,28 @@
 			"loopback/server/models",
 			"../common/models",
 			"./models",
-			"./node_modules/loopback-component-passport/lib/models"
+			"../node_modules/loopback-component-passport/lib/models"
+		],
+		"mixins": [
+			"loopback/common/mixins",
+			"loopback/server/mixins",
+			"../common/mixins",
+			"./mixins"
 		]
 	},
-	"User": {
-		"dataSource": "mongolab"
+	"AppUser": {
+		"dataSource": "mongolab",
+		"public": true
 	},
-	"AccessToken": {
+	"accessToken": {
+		"dataSource": "mongolab",
+		"public": false
+	},
+	"userCredential": {
+		"dataSource": "mongolab",
+		"public": false
+	},
+	"userIdentity": {
 		"dataSource": "mongolab",
 		"public": false
 	},
@@ -32,10 +47,6 @@
 		"public": true
 	},
 	"Review": {
-		"dataSource": "mongolab",
-		"public": true
-	},
-	"Reviewer": {
 		"dataSource": "mongolab",
 		"public": true
 	}

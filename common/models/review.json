@@ -24,7 +24,7 @@
     },
     "reviewer": {
       "type": "belongsTo",
-      "model": "Reviewer",
+      "model": "AppUser",
       "foreignKey": "publisherId"
     }
   },

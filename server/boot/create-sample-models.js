@@ -1,4 +1,4 @@
-var async = require('async');
+/*var async = require('async');
 
 module.exports = function(app) {
   // data sources
@@ -20,10 +20,10 @@ module.exports = function(app) {
 
   // create reviewers
   function createReviewers(cb) {
-    mongolab.automigrate('Reviewer', function(err) {
+    mongolab.automigrate('AppUser', function(err) {
       if (err) return cb(err);
 
-      app.models.Reviewer.create([
+      app.models.AppUser.create([
         {email: 'foo@bar.com', password: 'foobar'},
         {email: 'john@doe.com', password: 'johndoe'},
         {email: 'jane@doe.com', password: 'janedoe'}
@@ -83,4 +83,4 @@ module.exports = function(app) {
       ], cb);
     });
   }
-};
+};*/
