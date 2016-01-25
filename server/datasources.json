@@ -1,25 +1,16 @@
 {
-  "db": {
-    "name": "db",
-    "connector": "memory",
-	"file" : "data/db.json"
-  },
-  "mysqlDs": {
-    "host": "demo.strongloop.com",
-    "port": 3306,
-    "database": "getting_started_intermediate",
-    "username": "demo",
-    "password": "L00pBack",
-    "name": "mysqlDs",
-    "connector": "mysql"
-  },
-  "mongoDs": {
-    "host": "demo.strongloop.com",
-    "port": 27017,
-    "database": "getting_started_intermediate",
-    "username": "demo",
-    "password": "L00pBack",
-    "name": "mongoDs",
-    "connector": "mongodb"
-  }
+	"db": {
+		"name": "db",
+		"connector": "memory",
+		"file": "data/db.json"
+	},
+	"mongolab": {
+		"host": "ds049925.mongolab.com",
+		"port": 49925,
+		"database": "heroku_f04xz8tc",
+		"username": "vrseum_admin",
+		"password": "PieroAugmenta15",
+		"name": "mongolab",
+		"connector": "mongodb"
+	}
 }

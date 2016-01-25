@@ -1,41 +1,42 @@
 {
-  "_meta": {
-    "sources": [
-      "loopback/common/models",
-      "loopback/server/models",
-      "../common/models",
-      "./models"
-    ]
-  },
-  "User": {
-    "dataSource": "db"
-  },
-  "AccessToken": {
-    "dataSource": "db",
-    "public": false
-  },
-  "ACL": {
-    "dataSource": "db",
-    "public": false
-  },
-  "RoleMapping": {
-    "dataSource": "db",
-    "public": false
-  },
-  "Role": {
-    "dataSource": "db",
-    "public": false
-  },
-  "CoffeeShop": {
-    "dataSource": "mysqlDs",
-    "public": true
-  },
-  "Review": {
-    "dataSource": "mongoDs",
-    "public": true
-  },
-  "Reviewer": {
-    "dataSource": "mongoDs",
-    "public": true
-  }
+	"_meta": {
+		"sources": [
+			"loopback/common/models",
+			"loopback/server/models",
+			"../common/models",
+			"./models",
+			"./node_modules/loopback-component-passport/lib/models"
+		]
+	},
+	"User": {
+		"dataSource": "mongolab"
+	},
+	"AccessToken": {
+		"dataSource": "mongolab",
+		"public": false
+	},
+	"ACL": {
+		"dataSource": "mongolab",
+		"public": false
+	},
+	"RoleMapping": {
+		"dataSource": "mongolab",
+		"public": false
+	},
+	"Role": {
+		"dataSource": "mongolab",
+		"public": false
+	},
+	"CoffeeShop": {
+		"dataSource": "mongolab",
+		"public": true
+	},
+	"Review": {
+		"dataSource": "mongolab",
+		"public": true
+	},
+	"Reviewer": {
+		"dataSource": "mongolab",
+		"public": true
+	}
 }
