@@ -1,7 +1,8 @@
 {
   "db": {
     "name": "db",
-    "connector": "memory"
+    "connector": "memory",
+	"file" : "data/db.json"
   },
   "mysqlDs": {
     "host": "demo.strongloop.com",
