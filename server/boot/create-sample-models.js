@@ -2,7 +2,7 @@ var async = require('async');
 
 module.exports = function(app) {
   // data sources
-  var mongoDs = app.dataSources.mongoDs;
+  var mongolab = app.dataSources.mongolab;
   var mysqlDs = app.dataSources.mysqlDs;
 
   // create all models
@@ -20,7 +20,7 @@ module.exports = function(app) {
 
   // create reviewers
   function createReviewers(cb) {
-    mongoDs.automigrate('Reviewer', function(err) {
+    mongolab.automigrate('Reviewer', function(err) {
       if (err) return cb(err);
 
       app.models.Reviewer.create([
@@ -46,7 +46,7 @@ module.exports = function(app) {
 
   // create reviews
   function createReviews(reviewers, coffeeShops, cb) {
-    mongoDs.automigrate('Review', function(err) {
+    mongolab.automigrate('Review', function(err) {
       if (err) return cb(err);
 
       var DAY_IN_MILLISECONDS = 1000 * 60 * 60 * 24;
