@@ -61,6 +61,8 @@ angular
   .run(['$rootScope', '$state', function($rootScope, $state) {
     $rootScope.$on('$stateChangeStart', function(event, next) {
       // redirect to login page if not logged in
+	  //$rootScope.currentUser = localStorage.getItem('$LoopBack$currentUser')
+
       if (next.authenticate && !$rootScope.currentUser) {
         event.preventDefault(); //prevent current page from loading
         $state.go('forbidden');
