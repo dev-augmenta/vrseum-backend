@@ -11,6 +11,7 @@
     "angular-sanitize": "^1.4.9",
     "angular-ui-sortable": "^0.13.4"
   },
+  "ignore" : {},
   "devDependencies": {},
   "resolutions" : {
 	  "angular": "1.4.9"
