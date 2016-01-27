@@ -1,0 +1,18 @@
+{
+  "name": "vrseum-backend",
+  "version": "1.0.0",
+  "dependencies": {
+    "angular": "^1.4.9",
+    "angular-resource": "^1.4.9",
+    "angular-ui-router": "^0.2.17",
+    "bootstrap": "^3.3.6",
+    "jquery-ui": "^1.11.4",
+    "angular-touch": "^1.4.9",
+    "angular-sanitize": "^1.4.9",
+    "angular-ui-sortable": "^0.13.4"
+  },
+  "devDependencies": {},
+  "resolutions" : {
+	  "angular": "1.4.9"
+  }
+}
