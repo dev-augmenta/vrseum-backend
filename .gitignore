@@ -21,3 +21,4 @@ nbproject/private/
 data/
 data/*.sqlite
 data/*.json
+client/vendor/*
