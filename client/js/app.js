@@ -78,8 +78,5 @@ angular
 					event.preventDefault(); //prevent current page from loading
 					$state.go('forbidden');
 				}
-
-
-
 			});
 		}]);
