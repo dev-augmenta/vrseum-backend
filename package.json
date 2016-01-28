@@ -16,6 +16,7 @@
     "bower": "^1.7.7",
     "compression": "^1.0.3",
     "connect-ensure-login": "^0.1.1",
+    "connect-mongo": "^1.1.0",
     "cookie-parser": "^1.4.1",
     "cors": "^2.7.1",
     "errorhandler": "^1.1.1",

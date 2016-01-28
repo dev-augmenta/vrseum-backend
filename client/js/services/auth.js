@@ -29,7 +29,7 @@ angular
 					.logout()
 					.$promise
 					.then(function () {
-						$rootScope.currentUser = null;
+						//$rootScope.currentUser = null;
 						sessionStorage.clear();
 					});
 			}

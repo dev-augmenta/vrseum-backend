@@ -71,9 +71,13 @@ angular
 		}])
 	.run(['$rootScope', '$state', 'LoopBackAuth', function ($rootScope, $state, LoopBackAuth) {
 			$rootScope.$on('$stateChangeStart', function (event, next) {
-				// redirect to login page if no session storage is found
 
-				$rootScope.currentUser = {};
+				// check if currentUser is still valid in $rootScope
+				if($rootScope.currentUser !== null && $rootScope.currentUser.tokenId !== null)
+				{
+
+				}
+
 				if( sessionStorage.getItem('$LoopBack$CurrentUser$TokenId') !== null)
 				{
 

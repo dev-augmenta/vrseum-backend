@@ -30,6 +30,13 @@ module.exports = function (app) {
 	app.middleware('session:before', loopback.cookieParser(app.get('cookieSecret')));
 	console.log('Creating Mongo Session Store');
 	app.middleware('session', loopback.session({
+		store: new MongoStore({
+			db: 'heroku_f04xz8tc',
+			ip: 'ds049925.mongolab.com',
+			port: '49925',
+			username: 'vrseum_admin',
+			password: 'PieroAugmenta15'
+		}),
 		secret: app.get('cookieSecret'),
 		saveUninitialized: true,
 		resave: true
