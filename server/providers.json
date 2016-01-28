@@ -2,11 +2,13 @@
 	"local": {
 		"provider": "local",
 		"module": "passport-local",
-		"usernameField": "username",
+		"usernameField": "email",
 		"passwordField": "password",
 		"authPath": "/auth/local",
 		"successRedirect": "/auth/account",
 		"failureRedirect": "/local",
-		"failureFlash": false
+		"failureFlash": false,
+		"setAccessToken" : true,
+		"session" : true
 	}
 }

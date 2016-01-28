@@ -1,7 +1,7 @@
 angular
   .module('app')
-  .controller('AllReviewsController', ['$scope', 'Review', function($scope,
-      Review) {
+  .controller('AllReviewsController', ['$scope', 'Review', 'LoopBackAuth', function($scope,
+      Review, LoopBackAuth) {
     $scope.reviews = Review.find({
       filter: {
         include: [

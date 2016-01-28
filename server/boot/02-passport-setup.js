@@ -30,6 +30,11 @@ module.exports = function (app) {
 	app.middleware('session:before', loopback.cookieParser(app.get('cookieSecret')));
 	console.log('Creating Mongo Session Store');
 	app.middleware('session', loopback.session({
+		secret: app.get('cookieSecret'),
+		saveUninitialized: true,
+		resave: true
+	}));
+	/*app.middleware('session', loopback.session({
 		store: new MongoStore({
 			db: 'heroku_f04xz8tc',
 			ip: 'ds049925.mongolab.com',
@@ -40,7 +45,7 @@ module.exports = function (app) {
 		secret: app.get('cookieSecret'),
 		saveUninitialized: true,
 		resave: true
-	}));
+	}));*/
 
 	var config = false;
 	try
@@ -77,6 +82,17 @@ module.exports = function (app) {
 
 		//var ensureLoggedIn = require('connect-ensure-login').ensureLoggedIn;
 	}
+
+
+	app.get('/auth/current', function (req, res, next) {
+		if (!req.isAuthenticated || !req.isAuthenticated()) {
+			return res.status(200).json({});
+		}
+		//poor man's copy
+		var ret = JSON.parse(JSON.stringify(req.user));
+		delete ret.password;
+		res.status(200).json(ret);
+	});
 
 
 

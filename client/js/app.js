@@ -69,10 +69,24 @@ angular
 				});
 			$urlRouterProvider.otherwise('all-reviews');
 		}])
-	.run(['$rootScope', '$state', function ($rootScope, $state) {
+	.run(['$rootScope', '$state', 'LoopBackAuth', function ($rootScope, $state, LoopBackAuth) {
 			$rootScope.$on('$stateChangeStart', function (event, next) {
-				// redirect to login page if not logged in
-				//$rootScope.currentUser = localStorage.getItem('$LoopBack$currentUser')
+				// redirect to login page if no session storage is found
+
+				$rootScope.currentUser = {};
+				if( sessionStorage.getItem('$LoopBack$CurrentUser$TokenId') !== null)
+				{
+
+					$rootScope.currentUser.username = sessionStorage.getItem('$LoopBack$CurrentUser$Username');
+					$rootScope.currentUser.email = sessionStorage.getItem('$LoopBack$CurrentUser$Email');
+					$rootScope.currentUser.id = sessionStorage.getItem('$LoopBack$CurrentUser$Id');
+					$rootScope.currentUser.folder = sessionStorage.getItem('$LoopBack$CurrentUser$Folder');
+					$rootScope.currentUser.tokenId = sessionStorage.getItem('$LoopBack$CurrentUser$TokenId');
+				}
+				else
+				{
+					$rootScope.currentUser = null;
+				}
 
 				if (next.authenticate && !$rootScope.currentUser) {
 					event.preventDefault(); //prevent current page from loading

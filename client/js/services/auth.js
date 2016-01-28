@@ -1,24 +1,26 @@
 angular
 	.module('app')
-	.factory('AuthService', ['AppUser', '$q', '$rootScope', function (User, $q,
-			$rootScope) {
+	.factory('AuthService', ['AppUser', '$q', '$rootScope','LoopBackAuth', function (User, $q,
+			$rootScope, LoopBackAuth) {
 			function login(username, email, password) {
 				return User
 					.login({username: username, email: email, password: password})
 					.$promise
 					.then(function (response) {
-						$rootScope.currentUser = {
+							/*$rootScope.currentUser = {
 							id: response.user.id,
 							tokenId: response.id,
 							email: email,
-							username: username
-						};
-						//var accessToken = response.data;
-						//LoopBackAuth.setUser(accessToken.id, accessToken.userId, accessToken.user);
-						//LoopBackAuth.rememberMe = response.config.params.rememberMe !== false;
-						//LoopBackAuth.save();
+							username: username,
+							folder: LoopBackAuth.currentUserData.folder
+						};*/
 
-						//console.log(JSON.stringify(LoopBackAuth));
+						sessionStorage.setItem('$LoopBack$CurrentUser$Username', LoopBackAuth.currentUserData.username);
+						sessionStorage.setItem('$LoopBack$CurrentUser$Email', LoopBackAuth.currentUserData.email);
+						sessionStorage.setItem('$LoopBack$CurrentUser$Id', LoopBackAuth.currentUserData.id);
+						sessionStorage.setItem('$LoopBack$CurrentUser$Folder', LoopBackAuth.currentUserData.folder);
+						sessionStorage.setItem('$LoopBack$CurrentUser$TokenId', LoopBackAuth.accessTokenId);
+
 					});
 			}
 
@@ -28,7 +30,7 @@ angular
 					.$promise
 					.then(function () {
 						$rootScope.currentUser = null;
-						localStorage.clear();
+						sessionStorage.clear();
 					});
 			}
 
