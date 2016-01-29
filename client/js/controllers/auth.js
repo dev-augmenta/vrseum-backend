@@ -5,7 +5,7 @@ angular
 			$scope.login = function () {
 				AuthService.login($scope.user.username, $scope.user.email, $scope.user.password)
 					.then(function () {
-						$state.go('area-clienti-inizio');
+						$state.go('area-clienti');
 					});
 			};
 		}])
