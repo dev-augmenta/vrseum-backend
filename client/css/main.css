@@ -10,8 +10,9 @@ html {
 
 /*body*/
 body{
-	background-color: #eee;
-
+	background-color: white;
+	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    color: #373a3c;
 	/* Margin bottom by footer height */
 	margin-bottom: 60px;
 }
@@ -28,10 +29,16 @@ body > .container {
 }
 
 label {
-	display:inline-block;
+	/*display:inline-block;
 	text-align:right;
 	vertical-align:middle;
-	width:200px;
+	width:200px;*/
+}
+
+label {
+    display: inline-block;
+    margin-bottom: .5rem;
+	font-weight: normal;
 }
 
 /*navbar*/
@@ -97,7 +104,7 @@ label {
   width: 100%;
   /* Set the fixed height of the footer here */
   height: 60px;
-  background-color: #f5f5f5;
+  background-color: #222;
 }
 
 .footer > .container {
@@ -179,4 +186,67 @@ label {
 	margin-bottom: 10px;
 	border-top-left-radius: 0;
 	border-top-right-radius: 0;
+}
+
+.bd-box {
+		position: relative;
+		padding: 1rem;
+		margin: 1rem -1rem;
+		border: solid #f7f7f9;
+		border-width: .2rem 0 0;
+		background-color: #f5f5f5;
+}
+
+/* Box Container */
+@media (min-width: 544px)
+{
+	.bd-box {
+		margin-left: 0;
+		margin-right: 0;
+		margin-bottom: 0;
+		padding: 1.5rem;
+		border-width: .2rem;
+	}
+
+}
+
+
+
+/* CUSTOMIZE THE CAROUSEL
+-------------------------------------------------- */
+/* Carousel base class */
+.carousel {
+  height: 500px;
+  margin-bottom: 60px;
+}
+/* Since positioning the image, we need to help out the caption */
+.carousel-caption {
+  z-index: 10;
+  opacity: 0.5;
+  background-color: #222;
+  color: white;
+}
+
+/* Declare heights because of positioning of img element */
+.carousel .item {
+  height: 500px;
+  background-color: white;
+}
+
+.carousel-control.left, .carousel-control.right {
+   background-image:none !important;
+   filter:none !important;
+}
+
+.carousel-control {
+  opacity: 1;
+}
+
+.carousel-control:hover {
+  opacity: 0.5;
+}
+
+.gray
+{
+	color: #222;
 }

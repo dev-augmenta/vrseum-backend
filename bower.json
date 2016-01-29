@@ -9,11 +9,12 @@
     "jquery-ui": "^1.11.4",
     "angular-touch": "^1.4.9",
     "angular-sanitize": "^1.4.9",
-    "angular-ui-sortable": "^0.13.4"
+    "angular-ui-sortable": "^0.13.4",
+    "angular-utils-ui-breadcrumbs": "^0.2.2"
   },
-  "ignore" : {},
+  "ignore": {},
   "devDependencies": {},
-  "resolutions" : {
-	  "angular": "1.4.9"
+  "resolutions": {
+    "angular": "1.4.9"
   }
 }

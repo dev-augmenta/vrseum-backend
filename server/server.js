@@ -21,8 +21,6 @@ app.use('/express-status', function(req, res, next) {
   res.json({ running: true });
 });
 
-
-
 // Requests that get this far won't be handled
 // by any middleware. Convert them into a 404 error
 // that will be handled later down the chain.

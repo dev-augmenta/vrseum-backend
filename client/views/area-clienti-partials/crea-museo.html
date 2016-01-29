@@ -1,1 +1,27 @@
-<h3>Crea Museo</h3>
+<div class="bd-box">
+	<h2 class="form-create-museum-heading">Crea un nuovo museo</h2>
+	<form name="form"  ng-submit="create()">
+		<div class="form-group">
+			<label for="inputMuseumName">Nome</label>
+			<input type="text" class="form-control" id="inputMuseumName"
+				   ng-model="museum.name" placeholder="Nome" maxlength="80" required autofocus>
+		</div>
+		<div class="form-group">
+			<label for="inputMuseumDescription">Descrizione</label>
+			<textarea class="form-control" id="inputMuseumDescription"
+					  ng-model="museum.deascription" rows="5" maxlength="500"
+					  placeholder="Descrizione...(max 500 caratteri)" required autofocus></textarea>
+		</div>
+		<div class="form-group">
+			<label for="exampleInputFile">File input</label>
+			<input type="file" id="exampleInputFile">
+			<p class="help-block">Example block-level help text here.</p>
+		</div>
+		<div class="checkbox">
+			<label>
+				<input type="checkbox"> Check me out
+			</label>
+		</div>
+		<button type="submit" class="btn btn-default">Submit</button>
+	</form>
+</div>

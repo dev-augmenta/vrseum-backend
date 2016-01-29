@@ -49,5 +49,9 @@
 	"Review": {
 		"dataSource": "mongolab",
 		"public": true
+	},
+	"Museum": {
+		"dataSource": "mongolab",
+		"public": true
 	}
 }
