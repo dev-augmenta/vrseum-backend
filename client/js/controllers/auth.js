@@ -5,7 +5,7 @@ angular
 			$scope.login = function () {
 				AuthService.login($scope.user.username, $scope.user.email, $scope.user.password)
 					.then(function () {
-						$state.go('dashboard');
+						$state.go('area-clienti-inizio');
 					});
 			};
 		}])
@@ -13,7 +13,7 @@ angular
 		function ($scope, AuthService, $state) {
 			AuthService.logout()
 				.then(function () {
-					$state.go('all-reviews');
+					$state.go('home');
 				});
 		}])
 	.controller('SignUpController', ['$scope', 'AuthService', '$state',

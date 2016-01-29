@@ -26,49 +26,54 @@
 	</head>
 	<body>
 		<!-- Static navbar -->
-		<nav class="navbar navbar-inverse navbar-fixed-top">
-			<div class="container-fluid">
-				<div class="navbar-header" >
-					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-						<span class="sr-only">Toggle navigation</span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-					</button>
-					<a class="navbar-brand" href="#">VRSeum</a>
-				</div>
-				<div id="navbar" class="navbar-collapse collapse">
-					<ul class="nav navbar-nav">
-						<li ui-sref-active="active" ng-show="currentUser">
-							<a ui-sref="dashboard">Area Clienti</a>
-						</li>
-						<li ui-sref-active="active">
-							<a ui-sref="all-reviews">All Reviews</a>
-						</li>
-						<li ui-sref-active="active" ng-show="currentUser">
-							<a ui-sref="my-reviews">My Reviews</a>
-						</li>
-						<li ui-sref-active="active" ng-show="currentUser">
-							<a ui-sref="add-review">Add Review</a>
-						</li>
-					</ul>
-					<ul class="nav navbar-nav navbar-right">
-						<li ui-sref-active="active" ng-hide="currentUser">
-							<a ui-sref="sign-up">Registrati</a>
-						</li>
-						<li ui-sref-active="active" ng-hide="currentUser">
-							<a ui-sref="login">Login</a>
-						</li>
-						<li ng-show="currentUser">
-							<a>{{currentUser.email}}</a>
-						</li>
-						<li ng-show="currentUser">
-							<a ui-sref="logout" ui-sref-active="active">Esci</a>
-						</li>
-					</ul>
-				</div><!--/.nav-collapse -->
-			</div>
-		</nav>
+
+			<nav class="navbar navbar-inverse navbar-fixed-top" >
+				<div class="container-fluid">
+					<div class="navbar-header" >
+						<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+							<span class="sr-only">Toggle navigation</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+						<a class="navbar-brand" href="#">VRSeum</a>
+					</div>
+					<div id="navbar" class="navbar-collapse collapse">
+						<ul class="nav navbar-nav">
+							<li ui-sref-active="active" ng-show="currentUser">
+								<a ui-sref="area-clienti">Area Clienti</a>
+							</li>
+							<li ui-sref-active="active">
+								<a ui-sref="home">Home</a>
+							</li>
+							<li ui-sref-active="active" >
+								<a ui-sref="virtual-tour">Virtual Tour</a>
+							</li>
+							<li ui-sref-active="active" >
+								<a ui-sref="notizie">Notizie</a>
+							</li>
+							<li ui-sref-active="active" >
+								<a ui-sref="come-funziona">Come Funziona</a>
+							</li>
+						</ul>
+						<ul class="nav navbar-nav navbar-right">
+							<li ui-sref-active="active" ng-hide="currentUser">
+								<a ui-sref="sign-up">Registrati</a>
+							</li>
+							<li ui-sref-active="active" ng-hide="currentUser">
+								<a ui-sref="login">Login</a>
+							</li>
+							<li ng-show="currentUser">
+								<a>{{currentUser.email}}</a>
+							</li>
+							<li ng-show="currentUser">
+								<a ui-sref="logout" ui-sref-active="active">Esci</a>
+							</li>
+						</ul>
+					</div><!--/.nav-collapse -->
+				</div><!-- /. container-fluid -->
+			</nav>
+
 
 		<div class="container">
 			<main ui-view></main>
@@ -77,8 +82,10 @@
 		<footer class="footer">
 			<div class="container">
 				<p class="text-muted">VRSeum powered by augmenta.it</p>
-			</div>
+			</div> <!-- /container -->
 		</footer>
+
+
 
 		<script src="vendor/jquery/dist/jquery.js"></script>
 		<script src="vendor/angular/angular.js"></script>
@@ -89,6 +96,7 @@
 		<script src="js/services/lb-services.js"></script>
 		<script src="js/controllers/auth.js"></script>
 		<script src="js/controllers/review.js"></script>
+		<script src="js/controllers/navigation.js"></script>
 		<script src="js/services/auth.js"></script>
 		<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
 		<script src="js/patches/ie10-viewport-bug-workaround.js"></script>

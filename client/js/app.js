@@ -6,27 +6,77 @@ angular
 	.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider,
 			$urlRouterProvider) {
 			$stateProvider
-				.state('dashboard', {
-					url: '/dashboard',
-					templateUrl: 'views/dashboard.html',
+				.state('area-clienti', {
+					url: '/area-clienti',
+					templateUrl: 'views/area-clienti.html',
 					authenticate: true
-				}).state('dashboard.overview', {
-				url: 'overview',
-				templateUrl: 'views/dashboard-partials/overview.html'
-				}).state('dashboard.reports', {
-				url: 'reports',
-				templateUrl: 'views/dashboard-partials/reports.html'
+				})
+				.state('area-clienti.miei-musei', {
+					url: '/miei-musei',
+					templateUrl: 'views/area-clienti-partials/miei-musei.html',
+					authenticate: true
+				})
+				.state('area-clienti.crea-museo', {
+					url: '/crea-museo',
+					templateUrl: 'views/area-clienti-partials/crea-museo.html',
+					authenticate: true
+				})
+				.state('area-clienti.musei', {
+					url: '/musei',
+					templateUrl: 'views/area-clienti-partials/musei.html',
+					authenticate: true
+				})
+				.state('area-clienti.opere', {
+					url: '/opere',
+					templateUrl: 'views/area-clienti-partials/opere.html',
+					authenticate: true
+				})
+				.state('area-clienti.carica-opera', {
+					url: '/carica-opera',
+					templateUrl: 'views/area-clienti-partials/carica-opera.html',
+					authenticate: true
+				})
+				.state('area-clienti.haptic', {
+					url: '/haptic',
+					templateUrl: 'views/area-clienti-partials/haptic.html',
+					authenticate: true
+				})
+				.state('area-clienti.crea-haptic', {
+					url: '/crea-haptic',
+					templateUrl: 'views/area-clienti-partials/crea-haptic.html',
+					authenticate: true
+				})
+				.state('area-clienti.scarica-haptic', {
+					url: '/scarica-haptic',
+					templateUrl: 'views/area-clienti-partials/scarica-haptic.html',
+					authenticate: true
+				})
+				.state('area-clienti.editor-vr', {
+					url: '/editor-vr',
+					templateUrl: 'views/area-clienti-partials/editor-vr.html',
+					authenticate: true
+				})
+				.state('home', {
+					url: '/home',
+					templateUrl: 'views/home.html',
+				})
+				.state('virtual-tour', {
+					url: '/virtual-tour',
+					templateUrl: 'views/virtual-tour.html',
+				})
+				.state('notizie', {
+					url: '/notizie',
+					templateUrl: 'views/notizie.html',
+				})
+				.state('come-funziona', {
+					url: '/come-funziona',
+					templateUrl: 'views/come-funziona.html',
 				})
 				.state('add-review', {
 					url: '/add-review',
 					templateUrl: 'views/review-form.html',
 					controller: 'AddReviewController',
 					authenticate: true
-				})
-				.state('all-reviews', {
-					url: '/all-reviews',
-					templateUrl: 'views/all-reviews.html',
-					controller: 'AllReviewsController'
 				})
 				.state('edit-review', {
 					url: '/edit-review/:id',
@@ -46,11 +96,11 @@ angular
 				.state('login', {
 					url: '/login',
 					templateUrl: 'views/login.html',
-					controller: 'AuthLoginController'
+					controller: 'AuthLoginController',
 				})
 				.state('logout', {
 					url: '/logout',
-					controller: 'AuthLogoutController'
+					controller: 'AuthLogoutController',
 				})
 				.state('my-reviews', {
 					url: '/my-reviews',
@@ -67,19 +117,14 @@ angular
 					url: '/sign-up/success',
 					templateUrl: 'views/sign-up-success.html'
 				});
-			$urlRouterProvider.otherwise('all-reviews');
+			$urlRouterProvider.otherwise('home');
 		}])
 	.run(['$rootScope', '$state', 'LoopBackAuth', function ($rootScope, $state, LoopBackAuth) {
 			$rootScope.$on('$stateChangeStart', function (event, next) {
 
-				// check if currentUser is still valid in $rootScope
-				if($rootScope.currentUser !== null && $rootScope.currentUser.tokenId !== null)
-				{
-
-				}
-
 				if( sessionStorage.getItem('$LoopBack$CurrentUser$TokenId') !== null)
 				{
+					$rootScope.currentUser = {};
 
 					$rootScope.currentUser.username = sessionStorage.getItem('$LoopBack$CurrentUser$Username');
 					$rootScope.currentUser.email = sessionStorage.getItem('$LoopBack$CurrentUser$Email');
@@ -90,6 +135,7 @@ angular
 				else
 				{
 					$rootScope.currentUser = null;
+
 				}
 
 				if (next.authenticate && !$rootScope.currentUser) {
