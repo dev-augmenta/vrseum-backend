@@ -1,8 +1,11 @@
 angular
 	.module('app', [
+		'ngAnimate',
 		'ui.router',
 		'lbServices',
-		'angularUtils.directives.uiBreadcrumbs'
+		'angularUtils.directives.uiBreadcrumbs',
+		'anim-in-out'
+
 	])
 	.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider,
 			$urlRouterProvider) {
