@@ -12,7 +12,8 @@
     "angular-ui-sortable": "^0.13.4",
     "angular-utils-ui-breadcrumbs": "^0.2.2",
     "angular-ui-router-anim-in-out": "^1.0.2",
-    "angular-animate": "^1.4.9"
+    "angular-animate": "^1.4.9",
+    "angular-filter": "^0.5.8"
   },
   "ignore": {},
   "devDependencies": {},

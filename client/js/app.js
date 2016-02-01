@@ -4,7 +4,8 @@ angular
 		'ui.router',
 		'lbServices',
 		'angularUtils.directives.uiBreadcrumbs',
-		'anim-in-out'
+		'anim-in-out',
+		'angular.filter'
 
 	])
 	.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider,
@@ -24,6 +25,7 @@ angular
 					data : {
 						displayName: 'Miei Musei'
 					},
+					controller : 'MyMuseumsController',
 					authenticate: true
 				})
 				.state('area-clienti.crea-museo', {
@@ -41,6 +43,7 @@ angular
 					data : {
 						displayName: 'Musei'
 					},
+					controller : 'AllMuseumsController',
 					authenticate: true
 				})
 				.state('area-clienti.opere', {

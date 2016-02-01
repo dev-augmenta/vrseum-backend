@@ -4,7 +4,7 @@ angular
 			$rootScope, LoopBackAuth) {
 			function login(username, email, password) {
 				return User
-					.login({username: username, email: email, password: password})
+					.login({username: username, email: email, password: password,rememberMe : false}) //if rememberMe = true, loopback will look in localStorage instead of sessionStorage
 					.$promise
 					.then(function (response) {
 							/*$rootScope.currentUser = {
@@ -15,6 +15,7 @@ angular
 							folder: LoopBackAuth.currentUserData.folder
 						};*/
 
+						// Manually adding more params of session to session storage
 						sessionStorage.setItem('$LoopBack$CurrentUser$Username', LoopBackAuth.currentUserData.username);
 						sessionStorage.setItem('$LoopBack$CurrentUser$Email', LoopBackAuth.currentUserData.email);
 						sessionStorage.setItem('$LoopBack$CurrentUser$Id', LoopBackAuth.currentUserData.id);

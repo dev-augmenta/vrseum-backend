@@ -1,1 +1,30 @@
-<h3>Musei</h3>
+<h3>Musei Visitabili</h3>
+
+<!--<table class="table table-striped">
+	<thead>
+		<tr>
+			<th>Nome</th>
+			<th>Descrizione</th>
+			<th>Autore</th>
+			<th>Aperto</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr ng-repeat="museum in museums">
+			<td>{{museum.name}}</td>
+			<td>{{museum.description}}</td>
+			<td>{{museum.author}}</td>
+			<td>{{museum.isOpen}}</td>
+		</tr>
+	</tbody>
+</table>-->
+
+<div class="row" ng-repeat="museumsRow in museums | chunkBy : 3">
+	<div class="col-md-4 portfolio-item" ng-repeat="museum in museumsRow">
+		<a href="#">
+			<img class="img-responsive" ng-src="{{museum.thumbnail}}" alt>
+		</a>
+		<h3><a href="#">{{museum.name}}</a></h3>
+		<p>{{museum.description}}</p>
+	</div>
+</div>

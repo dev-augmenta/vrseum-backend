@@ -250,3 +250,7 @@ label {
 {
 	color: #222;
 }
+
+.portfolio-item {
+    margin-bottom: 25px;
+}

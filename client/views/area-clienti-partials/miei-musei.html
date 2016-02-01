@@ -1,1 +1,18 @@
 <h3>Miei Musei</h3>
+
+<table class="table table-striped">
+	<thead>
+		<tr>
+			<th>Nome</th>
+			<th>Descrizione</th>
+			<th>Aperto</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr ng-repeat="museum in museums">
+			<td>{{museum.name}}</td>
+			<td>{{museum.description}}</td>
+			<td>{{museum.isOpen}}</td>
+		</tr>
+	</tbody>
+</table>
