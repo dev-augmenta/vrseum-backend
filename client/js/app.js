@@ -147,6 +147,9 @@ angular
 					url: '/login',
 					templateUrl: 'views/login.html',
 					controller: 'AuthLoginController',
+					data : {
+						displayName: 'Login'
+					},
 				})
 				.state('logout', {
 					url: '/logout',
@@ -162,10 +165,16 @@ angular
 					url: '/sign-up',
 					templateUrl: 'views/sign-up-form.html',
 					controller: 'SignUpController',
+					data : {
+						displayName: 'Registrazione'
+					},
 				})
 				.state('sign-up-success', {
 					url: '/sign-up/success',
-					templateUrl: 'views/sign-up-success.html'
+					templateUrl: 'views/sign-up-success.html',
+					data : {
+						displayName: 'Registrazione Completata'
+					},
 				});
 			$urlRouterProvider.otherwise('home');
 		}])
