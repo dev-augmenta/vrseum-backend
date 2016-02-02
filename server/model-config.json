@@ -53,5 +53,13 @@
 	"Museum": {
 		"dataSource": "mongolab",
 		"public": true
+	},
+	"file": {
+		"dataSource": "mongolab",
+		"public": true
+	},
+	"container": {
+		"dataSource": "storage",
+		"public": true
 	}
 }

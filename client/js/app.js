@@ -61,6 +61,7 @@ angular
 					data : {
 						displayName: 'Carica Opera'
 					},
+					controller : 'FilesUploaderController',
 					authenticate: true
 				})
 				.state('area-clienti.haptic', {
