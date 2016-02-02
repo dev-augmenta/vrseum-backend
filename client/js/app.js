@@ -5,7 +5,8 @@ angular
 		'lbServices',
 		'angularUtils.directives.uiBreadcrumbs',
 		'anim-in-out',
-		'angular.filter'
+		'angular.filter',
+		'angularFileUpload'
 
 	])
 	.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider,
