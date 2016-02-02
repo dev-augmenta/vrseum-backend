@@ -1,5 +1,6 @@
 var loopback = require('loopback');
 var boot = require('loopback-boot');
+var _ = require('underscore');
 
 var app = module.exports = loopback();
 

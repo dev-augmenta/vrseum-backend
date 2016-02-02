@@ -33,7 +33,10 @@ module.exports = function(AppUser) {
 
 		if( ctx.isNewInstance )
 		{
-			var containerName = 'vrseum-'+ctx.instance.username+'-'+ctx.instance.id.toString();
+			//Replace spaces with '_' undersores to avoid name problems
+			var uName = ctx.instance.username.split(" ").join("-").toLowerCase();
+			var containerName = 'vrseum-'+uName+'-'+ctx.instance.id.toString();
+			console.log('Container Name will be '+ uName);
 			console.log('New AppUser created  ' + JSON.stringify(ctx, null, 2));
 
 			// Create new datasource for user file container
