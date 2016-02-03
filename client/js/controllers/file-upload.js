@@ -6,25 +6,29 @@ angular
 			var uploader = $scope.uploader = new FileUploader({
 				scope: $scope, // to automatically update the html. Default: $rootScope
 				//url: '/api/containers/'+$scope.currentUser.folder+'/upload',
-				url: '/api/files/upload',
+				url: '/api/files/upload?options='+$scope.currentUser.folder,
 				formData: [
-					{key: 'value'}
+					{key: 'value',
+					 folder : $scope.currentUser.folder
+					}
 				]
 			});
 
 			// ADDING FILTERS
-			uploader.filters.push({
+			/*uploader.filters.push({
 				name: 'filterName',
 				fn: function (item, options) { // second user filter
 					console.info('filter2');
 					return true;
 				}
-			});
+			});*/
 
 			// REGISTER HANDLERS
 			// --------------------
 			uploader.onAfterAddingFile = function (item) {
 				console.info('After adding a file', item);
+
+				 //item.formData.push({folder: $scope.currentUser.folder});
 			};
 			// --------------------
 			uploader.onAfterAddingAll = function (items) {
@@ -66,6 +70,7 @@ angular
 			// --------------------
 			uploader.onCompleteAll = function () {
 				console.info('Complete all');
+				// remove uploaded file from queue
 			};
 			// --------------------
 		}])
@@ -73,7 +78,7 @@ angular
 
 			$scope.load = function () {
 				$http.get('/api/containers/'+$scope.currentUser.folder+'/files').success(function (data) {
-					console.log(data);
+					// console.log(data);
 					$scope.files = data;
 				});
 			};
@@ -86,6 +91,7 @@ angular
 
 			$scope.$on('uploadCompleted', function (event) {
 				console.log('uploadCompleted event received');
-				$scope.load();
+				$scope.load(); //refresh the file list
+
 			});
 		}]);

@@ -1,7 +1,7 @@
 <h2>Carica Opera</h2>
 
 <h3>Scegli File Da Caricare</h3>
-<input nv-file-select uploader="uploader" type="file" multiple/><br/>
+<input nv-file-select uploader="uploader" options="{{currentUser}}" type="file" multiple/><br/>
 
 <h3>Coda di Upload</h3>
 <p>File in coda: {{ uploader.queue.length}}</p>

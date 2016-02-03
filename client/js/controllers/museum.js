@@ -47,9 +47,9 @@ angular
 
 				for( var i = 0; i < data.length; i++)
 				{
-					data[i].author = data[i].owner.username;
+					//data[i].author = data[i].owner.username;
 					// eliminate sensibles data
-					data[i].owner = null;
+					//data[i].owner = null;
 				}
 				// return values
 				$scope.museums = data;

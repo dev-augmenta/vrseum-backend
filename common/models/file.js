@@ -2,8 +2,8 @@ var CONTAINERS_URL = '/api/containers/';
 module.exports = function(File) {
 
     File.upload = function (ctx,options,cb) {
-        if(!options) options = {};
-        ctx.req.params.container = 'vrseum-erik-56a7aa734cb5d3b2647ae2a8';
+        
+        ctx.req.params.container = options;
         File.app.models.container.upload(ctx.req,ctx.result,options,function (err,fileObj) {
             if(err) {
                 cb(err);
@@ -31,7 +31,7 @@ module.exports = function(File) {
             description: 'Uploads a file',
             accepts: [
                 { arg: 'ctx', type: 'object', http: { source:'context' } },
-                { arg: 'options', type: 'object', http:{ source: 'query'} }
+                { arg: 'options', type: 'string', http:{ source: 'query'} }
             ],
             returns: {
                 arg: 'fileObject', type: 'object', root: true

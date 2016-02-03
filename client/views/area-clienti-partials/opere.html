@@ -1,1 +1,26 @@
-<h3>Opere</h3>
+<h2>Opere</h2>
+
+<div ng-controller="FilesController" data-ng-init="load()">
+
+	<h3>Opere gi&agrave; caricate</h3>
+
+	<table class="table">
+
+		<tbody>
+			<tr ng-repeat="file in files">
+				<td>
+					<a href="/api/containers/{{file.container}}/download/{{file.name}}"><strong>{{
+						file.name}}</strong></a></td>
+				<td>
+				<td>
+					<button type="button" class="btn btn-danger btn-xs"
+							ng-click="delete($index, file.name)"
+							title="Cancella il file">
+						<span class="glyphicon glyphicon-trash"></span>
+						Remove
+					</button>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
