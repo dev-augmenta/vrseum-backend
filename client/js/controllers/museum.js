@@ -47,9 +47,17 @@ angular
 
 				for( var i = 0; i < data.length; i++)
 				{
-					//data[i].author = data[i].owner.username;
-					// eliminate sensibles data
-					//data[i].owner = null;
+					if( data[i].owner && data[i].owner.username)
+					{
+						data[i].author = data[i].owner.username;
+						// eliminate sensibles data
+						data[i].owner = null;
+					}
+					else
+					{
+						// remove museums wihtout an owner
+						data[i] = null;
+					}
 				}
 				// return values
 				$scope.museums = data;

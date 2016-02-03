@@ -10,11 +10,11 @@
 <table class="table">
 	<thead>
 		<tr>
-			<th width="50%">Name</th>
-			<th ng-show="uploader.isHTML5">Size</th>
-			<th ng-show="uploader.isHTML5">Progress</th>
-			<th>Status</th>
-			<th>Actions</th>
+			<th width="50%">Nome</th>
+			<th ng-show="uploader.isHTML5">Dimensioni</th>
+			<th ng-show="uploader.isHTML5">Progresso</th>
+			<th>Stato</th>
+			<th>Azioni</th>
 		</tr>
 	</thead>
 	<tbody>
@@ -42,18 +42,18 @@
 						ng-click="item.upload()"
 						ng-disabled="item.isReady || item.isUploading || item.isSuccess">
 					<span class="glyphicon glyphicon-upload"></span>
-					Upload
+					Carica
 				</button>
 				<button type="button" class="btn btn-warning btn-xs"
 						ng-click="item.cancel()"
 						ng-disabled="!item.isUploading">
 					<span class="glyphicon glyphicon-ban-circle"></span>
-					Cancel
+					Annulla
 				</button>
 				<button type="button" class="btn btn-danger btn-xs"
 						ng-click="item.remove()">
 					<span class="glyphicon glyphicon-trash"></span>
-					Remove
+					Elimina
 				</button>
 			</td>
 		</tr>
@@ -72,18 +72,17 @@
 <button type="button" class="btn btn-success btn-s"
 		ng-click="uploader.uploadAll()"
 		ng-disabled="!uploader.getNotUploadedItems().length">
-	<span class="glyphicon glyphicon-upload"></span> Upload all
+	<span class="glyphicon glyphicon-upload"></span> Carica Tutti
 </button>
 <button type="button" class="btn btn-warning btn-s"
 		ng-click="uploader.cancelAll()"
 		ng-disabled="!uploader.isUploading">
-	<span class="glyphicon glyphicon-ban-circle"></span> Cancel
-	all
+	<span class="glyphicon glyphicon-ban-circle"></span> Annulla Tutti
 </button>
 <button type="button" class="btn btn-danger btn-s"
 		ng-click="uploader.clearQueue()"
 		ng-disabled="!uploader.queue.length">
-	<span class="glyphicon glyphicon-trash"></span> Remove all
+	<span class="glyphicon glyphicon-trash"></span> Elimina Tutti
 </button>
 </div>
 
@@ -104,7 +103,7 @@
 							ng-click="delete($index, file.name)"
 							title="Cancella il file">
 						<span class="glyphicon glyphicon-trash"></span>
-						Remove
+						Elimina
 					</button>
 				</td>
 			</tr>

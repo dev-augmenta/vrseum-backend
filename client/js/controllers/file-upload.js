@@ -7,11 +7,13 @@ angular
 				scope: $scope, // to automatically update the html. Default: $rootScope
 				//url: '/api/containers/'+$scope.currentUser.folder+'/upload',
 				url: '/api/files/upload?options='+$scope.currentUser.folder,
-				formData: [
-					{key: 'value',
-					 folder : $scope.currentUser.folder
-					}
-				]
+				//url: '/api/files/upload',
+				removeAfterUpload: true,
+				data : {
+					elPerro : 'laFormica'
+				}
+
+
 			});
 
 			// ADDING FILTERS
@@ -28,7 +30,7 @@ angular
 			uploader.onAfterAddingFile = function (item) {
 				console.info('After adding a file', item);
 
-				 //item.formData.push({folder: $scope.currentUser.folder});
+				 item.formData.push({folder: $scope.currentUser.folder});
 			};
 			// --------------------
 			uploader.onAfterAddingAll = function (items) {
@@ -41,6 +43,7 @@ angular
 			// --------------------
 			uploader.onBeforeUploadItem = function (item) {
 				console.info('Before upload', item);
+				item.formData.push({ laPutaCarpeta: $scope.currentUser.folder});
 			};
 			// --------------------
 			uploader.onProgressItem = function (item, progress) {
