@@ -4,8 +4,8 @@
 	padding:0;
 }
 html {
-  position: relative;
-  min-height: 100%;
+	position: relative;
+	min-height: 100%;
 }
 
 /*body*/
@@ -17,7 +17,7 @@ body{
 	margin-bottom: 60px;
 }
 body > .container {
-  padding: 60px 15px 0;
+	padding: 60px 15px 0;
 }
 
 p {
@@ -32,8 +32,8 @@ p {
  * Global add-ons
  */
 .sub-header {
-  padding-bottom: 10px;
-  border-bottom: 1px solid #eee;
+	padding-bottom: 10px;
+	border-bottom: 1px solid #eee;
 }
 
 label {
@@ -51,14 +51,14 @@ label {
 
 /*navbar*/
 .navbar-static-top {
-  margin-bottom: 19px;
+	margin-bottom: 19px;
 }
 /*
  * Top navigation
  * Hide default border to remove 1px line.
  */
 .navbar-fixed-top {
-  border: 0;
+	border: 0;
 }
 
 
@@ -69,59 +69,59 @@ label {
 
 /* Hide for mobile, show later */
 .sidebar {
-  display: none;
+	display: none;
 }
 @media (min-width: 768px) {
-  .sidebar {
-    position: fixed;
-    top: 51px;
-    bottom: 0;
-    left: 0;
-    z-index: 1000;
-    display: block;
-    padding: 20px;
-    overflow-x: hidden;
-    overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
-    background-color: #f5f5f5;
-    border-right: 1px solid #eee;
-  }
+	.sidebar {
+		position: fixed;
+		top: 51px;
+		bottom: 0;
+		left: 0;
+		z-index: 1000;
+		display: block;
+		padding: 20px;
+		overflow-x: hidden;
+		overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
+		background-color: #f5f5f5;
+		border-right: 1px solid #eee;
+	}
 }
 
 /* Sidebar navigation */
 .nav-sidebar {
-  margin-right: -21px; /* 20px padding + 1px border */
-  margin-bottom: 20px;
-  margin-left: -20px;
+	margin-right: -21px; /* 20px padding + 1px border */
+	margin-bottom: 20px;
+	margin-left: -20px;
 }
 .nav-sidebar > li > a {
-  padding-right: 20px;
-  padding-left: 20px;
+	padding-right: 20px;
+	padding-left: 20px;
 }
 .nav-sidebar > .active > a,
 .nav-sidebar > .active > a:hover,
 .nav-sidebar > .active > a:focus {
-  color: #fff;
-  background-color: #428bca;
+	color: #fff;
+	background-color: #428bca;
 }
 
 
 /* sticky footer*/
 .footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  /* Set the fixed height of the footer here */
-  height: 60px;
-  background-color: #222;
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	/* Set the fixed height of the footer here */
+	height: 60px;
+	background-color: #222;
 }
 
 .footer > .container {
-  padding-right: 15px;
-  padding-left: 15px;
+	padding-right: 15px;
+	padding-left: 15px;
 }
 
 .container .text-muted {
-  margin: 20px 0;
+	margin: 20px 0;
 }
 
 /*
@@ -129,16 +129,16 @@ label {
  */
 
 .main {
-  padding: 20px;
+	padding: 20px;
 }
 @media (min-width: 768px) {
-  .main {
-    padding-right: 40px;
-    padding-left: 40px;
-  }
+	.main {
+		padding-right: 40px;
+		padding-left: 40px;
+	}
 }
 .main .page-header {
-  margin-top: 0;
+	margin-top: 0;
 }
 
 /*
@@ -146,18 +146,18 @@ label {
  */
 
 .placeholders {
-  margin-bottom: 30px;
-  text-align: center;
+	margin-bottom: 30px;
+	text-align: center;
 }
 .placeholders h4 {
-  margin-bottom: 0;
+	margin-bottom: 0;
 }
 .placeholder {
-  margin-bottom: 20px;
+	margin-bottom: 20px;
 }
 .placeholder img {
-  display: inline-block;
-  border-radius: 50%;
+	display: inline-block;
+	border-radius: 50%;
 }
 
 /*signup form*/
@@ -197,12 +197,12 @@ label {
 }
 
 .bd-box {
-		position: relative;
-		padding: 1rem;
-		margin: 1rem -1rem;
-		border: solid #f7f7f9;
-		border-width: .2rem 0 0;
-		background-color: #f5f5f5;
+	position: relative;
+	padding: 1rem;
+	margin: 1rem -1rem;
+	border: solid #f7f7f9;
+	border-width: .2rem 0 0;
+	background-color: #f5f5f5;
 }
 
 /* Box Container */
@@ -224,8 +224,8 @@ label {
 -------------------------------------------------- */
 /* Carousel base class */
 .carousel {
-  height: 500px;
-  margin-bottom: 60px;
+	height: 500px;
+	margin-bottom: 60px;
 }
 
 .carousel-image
@@ -236,41 +236,41 @@ label {
 
 /* Since positioning the image, we need to help out the caption */
 .carousel-caption {
-  z-index: 10;
-  opacity: 0.8;
-  background-color: #111;
-  color: white;
-  bottom: 0;
-  padding-top: 0px;
+	z-index: 10;
+	opacity: 0.8;
+	background-color: #111;
+	color: white;
+	bottom: 0;
+	padding-top: 0px;
 
 }
 
 /* Declare heights because of positioning of img element */
 .carousel .item {
-  height: 550px;
-  background-color: white;
+	height: 550px;
+	background-color: white;
 }
 
 .carousel-inner > .item > img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  min-width: 100%;
-  height: auto;
+	position: absolute;
+	top: 0;
+	left: 0;
+	min-width: 100%;
+	height: auto;
 }
 
 .carousel-control.left, .carousel-control.right {
-   background-image:none !important;
-   filter:none !important;
-   display: none;
+	background-image:none !important;
+	filter:none !important;
+	display: none;
 }
 
 .carousel-control {
-  opacity: 1;
+	opacity: 1;
 }
 
 .carousel-control:hover {
-  opacity: 0.5;
+	opacity: 0.5;
 }
 
 .carousel-indicators
@@ -334,4 +334,14 @@ label {
 .post-body
 {
 	line-height: 20px;
+}
+
+canvas {
+	background-color: #f3f3f3;
+	-webkit-box-shadow: 3px 3px 3px 0 #e3e3e3;
+	-moz-box-shadow: 3px 3px 3px 0 #e3e3e3;
+	box-shadow: 3px 3px 3px 0 #e3e3e3;
+	border: 1px solid #c3c3c3;
+	height: 100px;
+	margin: 6px 0 0 6px;
 }
