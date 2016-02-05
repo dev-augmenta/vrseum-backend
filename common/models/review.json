@@ -21,11 +21,6 @@
       "type": "belongsTo",
       "model": "CoffeeShop",
       "foreignKey": ""
-    },
-    "reviewer": {
-      "type": "belongsTo",
-      "model": "AppUser",
-      "foreignKey": "publisherId"
     }
   },
   "acls": [

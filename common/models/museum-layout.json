@@ -1,0 +1,25 @@
+{
+	"name": "MuseumLayout",
+	"plural": "MuseumLayouts",
+	"base": "PersistedModel",
+	"idInjection": true,
+	"options": {
+		"validateUpsert": true
+	},
+	"properties": {
+		"data": {
+			"type": "Object",
+			"required": false
+		}
+	},
+	"validations": [],
+	"relations": {
+		"owner": {
+			"type": "belongsTo",
+			"model": "Museum",
+			"foreignKey": "museumId"
+		}
+	},
+	"acls": [],
+	"methods": {}
+}

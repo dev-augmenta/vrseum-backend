@@ -54,6 +54,10 @@
 		"dataSource": "mongolab",
 		"public": true
 	},
+	"MuseumLayout" : {
+		"dataSource" : "mongolab",
+		"public" : true
+	},
 	"file": {
 		"dataSource": "mongolab",
 		"public": true

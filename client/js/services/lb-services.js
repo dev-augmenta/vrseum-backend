@@ -392,33 +392,6 @@ module.factory(
           method: "PUT"
         },
 
-        // INTERNAL. Use AppUser.reviews.findById() instead.
-        "prototype$__findById__reviews": {
-          params: {
-          'fk': '@fk'
-          },
-          url: urlBase + "/AppUsers/:id/reviews/:fk",
-          method: "GET"
-        },
-
-        // INTERNAL. Use AppUser.reviews.destroyById() instead.
-        "prototype$__destroyById__reviews": {
-          params: {
-          'fk': '@fk'
-          },
-          url: urlBase + "/AppUsers/:id/reviews/:fk",
-          method: "DELETE"
-        },
-
-        // INTERNAL. Use AppUser.reviews.updateById() instead.
-        "prototype$__updateById__reviews": {
-          params: {
-          'fk': '@fk'
-          },
-          url: urlBase + "/AppUsers/:id/reviews/:fk",
-          method: "PUT"
-        },
-
         // INTERNAL. Use AppUser.museums.findById() instead.
         "prototype$__findById__museums": {
           params: {
@@ -854,31 +827,6 @@ module.factory(
          */
         "prototype$__count__identities": {
           url: urlBase + "/AppUsers/:id/identities/count",
-          method: "GET"
-        },
-
-        // INTERNAL. Use AppUser.reviews() instead.
-        "prototype$__get__reviews": {
-          isArray: true,
-          url: urlBase + "/AppUsers/:id/reviews",
-          method: "GET"
-        },
-
-        // INTERNAL. Use AppUser.reviews.create() instead.
-        "prototype$__create__reviews": {
-          url: urlBase + "/AppUsers/:id/reviews",
-          method: "POST"
-        },
-
-        // INTERNAL. Use AppUser.reviews.destroyAll() instead.
-        "prototype$__delete__reviews": {
-          url: urlBase + "/AppUsers/:id/reviews",
-          method: "DELETE"
-        },
-
-        // INTERNAL. Use AppUser.reviews.count() instead.
-        "prototype$__count__reviews": {
-          url: urlBase + "/AppUsers/:id/reviews/count",
           method: "GET"
         },
 
@@ -1587,12 +1535,6 @@ module.factory(
           method: "GET"
         },
 
-        // INTERNAL. Use Review.reviewer() instead.
-        "::get::Review::reviewer": {
-          url: urlBase + "/Reviews/:id/reviewer",
-          method: "GET"
-        },
-
         // INTERNAL. Use Museum.owner() instead.
         "::get::Museum::owner": {
           url: urlBase + "/Museums/:id/owner",
@@ -1820,307 +1762,6 @@ module.factory(
     */
     R.modelName = "AppUser";
 
-    /**
-     * @ngdoc object
-     * @name lbServices.AppUser.reviews
-     * @header lbServices.AppUser.reviews
-     * @object
-     * @description
-     *
-     * The object `AppUser.reviews` groups methods
-     * manipulating `Review` instances related to `AppUser`.
-     *
-     * Call {@link lbServices.AppUser#reviews AppUser.reviews()}
-     * to query all related instances.
-     */
-
-
-        /**
-         * @ngdoc method
-         * @name lbServices.AppUser#reviews
-         * @methodOf lbServices.AppUser
-         *
-         * @description
-         *
-         * Queries reviews of AppUser.
-         *
-         * @param {Object=} parameters Request parameters.
-         *
-         *  - `id` – `{*}` - User id
-         *
-         *  - `filter` – `{object=}` -
-         *
-         * @param {function(Array.<Object>,Object)=} successCb
-         *   Success callback with two arguments: `value`, `responseHeaders`.
-         *
-         * @param {function(Object)=} errorCb Error callback with one argument:
-         *   `httpResponse`.
-         *
-         * @returns {Array.<Object>} An empty reference that will be
-         *   populated with the actual data once the response is returned
-         *   from the server.
-         *
-         * <em>
-         * (The remote method definition does not provide any description.
-         * This usually means the response is a `Review` object.)
-         * </em>
-         */
-        R.reviews = function() {
-          var TargetResource = $injector.get("Review");
-          var action = TargetResource["::get::AppUser::reviews"];
-          return action.apply(R, arguments);
-        };
-
-        /**
-         * @ngdoc method
-         * @name lbServices.AppUser.reviews#count
-         * @methodOf lbServices.AppUser.reviews
-         *
-         * @description
-         *
-         * Counts reviews of AppUser.
-         *
-         * @param {Object=} parameters Request parameters.
-         *
-         *  - `id` – `{*}` - User id
-         *
-         *  - `where` – `{object=}` - Criteria to match model instances
-         *
-         * @param {function(Object,Object)=} successCb
-         *   Success callback with two arguments: `value`, `responseHeaders`.
-         *
-         * @param {function(Object)=} errorCb Error callback with one argument:
-         *   `httpResponse`.
-         *
-         * @returns {Object} An empty reference that will be
-         *   populated with the actual data once the response is returned
-         *   from the server.
-         *
-         * Data properties:
-         *
-         *  - `count` – `{number=}` -
-         */
-        R.reviews.count = function() {
-          var TargetResource = $injector.get("Review");
-          var action = TargetResource["::count::AppUser::reviews"];
-          return action.apply(R, arguments);
-        };
-
-        /**
-         * @ngdoc method
-         * @name lbServices.AppUser.reviews#create
-         * @methodOf lbServices.AppUser.reviews
-         *
-         * @description
-         *
-         * Creates a new instance in reviews of this model.
-         *
-         * @param {Object=} parameters Request parameters.
-         *
-         *  - `id` – `{*}` - User id
-         *
-         * @param {Object} postData Request data.
-         *
-         * This method expects a subset of model properties as request parameters.
-         *
-         * @param {function(Object,Object)=} successCb
-         *   Success callback with two arguments: `value`, `responseHeaders`.
-         *
-         * @param {function(Object)=} errorCb Error callback with one argument:
-         *   `httpResponse`.
-         *
-         * @returns {Object} An empty reference that will be
-         *   populated with the actual data once the response is returned
-         *   from the server.
-         *
-         * <em>
-         * (The remote method definition does not provide any description.
-         * This usually means the response is a `Review` object.)
-         * </em>
-         */
-        R.reviews.create = function() {
-          var TargetResource = $injector.get("Review");
-          var action = TargetResource["::create::AppUser::reviews"];
-          return action.apply(R, arguments);
-        };
-
-        /**
-         * @ngdoc method
-         * @name lbServices.AppUser.reviews#createMany
-         * @methodOf lbServices.AppUser.reviews
-         *
-         * @description
-         *
-         * Creates a new instance in reviews of this model.
-         *
-         * @param {Object=} parameters Request parameters.
-         *
-         *  - `id` – `{*}` - User id
-         *
-         * @param {Object} postData Request data.
-         *
-         * This method expects a subset of model properties as request parameters.
-         *
-         * @param {function(Array.<Object>,Object)=} successCb
-         *   Success callback with two arguments: `value`, `responseHeaders`.
-         *
-         * @param {function(Object)=} errorCb Error callback with one argument:
-         *   `httpResponse`.
-         *
-         * @returns {Array.<Object>} An empty reference that will be
-         *   populated with the actual data once the response is returned
-         *   from the server.
-         *
-         * <em>
-         * (The remote method definition does not provide any description.
-         * This usually means the response is a `Review` object.)
-         * </em>
-         */
-        R.reviews.createMany = function() {
-          var TargetResource = $injector.get("Review");
-          var action = TargetResource["::createMany::AppUser::reviews"];
-          return action.apply(R, arguments);
-        };
-
-        /**
-         * @ngdoc method
-         * @name lbServices.AppUser.reviews#destroyAll
-         * @methodOf lbServices.AppUser.reviews
-         *
-         * @description
-         *
-         * Deletes all reviews of this model.
-         *
-         * @param {Object=} parameters Request parameters.
-         *
-         *  - `id` – `{*}` - User id
-         *
-         * @param {function(Object,Object)=} successCb
-         *   Success callback with two arguments: `value`, `responseHeaders`.
-         *
-         * @param {function(Object)=} errorCb Error callback with one argument:
-         *   `httpResponse`.
-         *
-         * @returns {Object} An empty reference that will be
-         *   populated with the actual data once the response is returned
-         *   from the server.
-         *
-         * This method returns no data.
-         */
-        R.reviews.destroyAll = function() {
-          var TargetResource = $injector.get("Review");
-          var action = TargetResource["::delete::AppUser::reviews"];
-          return action.apply(R, arguments);
-        };
-
-        /**
-         * @ngdoc method
-         * @name lbServices.AppUser.reviews#destroyById
-         * @methodOf lbServices.AppUser.reviews
-         *
-         * @description
-         *
-         * Delete a related item by id for reviews.
-         *
-         * @param {Object=} parameters Request parameters.
-         *
-         *  - `id` – `{*}` - User id
-         *
-         *  - `fk` – `{*}` - Foreign key for reviews
-         *
-         * @param {function(Object,Object)=} successCb
-         *   Success callback with two arguments: `value`, `responseHeaders`.
-         *
-         * @param {function(Object)=} errorCb Error callback with one argument:
-         *   `httpResponse`.
-         *
-         * @returns {Object} An empty reference that will be
-         *   populated with the actual data once the response is returned
-         *   from the server.
-         *
-         * This method returns no data.
-         */
-        R.reviews.destroyById = function() {
-          var TargetResource = $injector.get("Review");
-          var action = TargetResource["::destroyById::AppUser::reviews"];
-          return action.apply(R, arguments);
-        };
-
-        /**
-         * @ngdoc method
-         * @name lbServices.AppUser.reviews#findById
-         * @methodOf lbServices.AppUser.reviews
-         *
-         * @description
-         *
-         * Find a related item by id for reviews.
-         *
-         * @param {Object=} parameters Request parameters.
-         *
-         *  - `id` – `{*}` - User id
-         *
-         *  - `fk` – `{*}` - Foreign key for reviews
-         *
-         * @param {function(Object,Object)=} successCb
-         *   Success callback with two arguments: `value`, `responseHeaders`.
-         *
-         * @param {function(Object)=} errorCb Error callback with one argument:
-         *   `httpResponse`.
-         *
-         * @returns {Object} An empty reference that will be
-         *   populated with the actual data once the response is returned
-         *   from the server.
-         *
-         * <em>
-         * (The remote method definition does not provide any description.
-         * This usually means the response is a `Review` object.)
-         * </em>
-         */
-        R.reviews.findById = function() {
-          var TargetResource = $injector.get("Review");
-          var action = TargetResource["::findById::AppUser::reviews"];
-          return action.apply(R, arguments);
-        };
-
-        /**
-         * @ngdoc method
-         * @name lbServices.AppUser.reviews#updateById
-         * @methodOf lbServices.AppUser.reviews
-         *
-         * @description
-         *
-         * Update a related item by id for reviews.
-         *
-         * @param {Object=} parameters Request parameters.
-         *
-         *  - `id` – `{*}` - User id
-         *
-         *  - `fk` – `{*}` - Foreign key for reviews
-         *
-         * @param {Object} postData Request data.
-         *
-         * This method expects a subset of model properties as request parameters.
-         *
-         * @param {function(Object,Object)=} successCb
-         *   Success callback with two arguments: `value`, `responseHeaders`.
-         *
-         * @param {function(Object)=} errorCb Error callback with one argument:
-         *   `httpResponse`.
-         *
-         * @returns {Object} An empty reference that will be
-         *   populated with the actual data once the response is returned
-         *   from the server.
-         *
-         * <em>
-         * (The remote method definition does not provide any description.
-         * This usually means the response is a `Review` object.)
-         * </em>
-         */
-        R.reviews.updateById = function() {
-          var TargetResource = $injector.get("Review");
-          var action = TargetResource["::updateById::AppUser::reviews"];
-          return action.apply(R, arguments);
-        };
     /**
      * @ngdoc object
      * @name lbServices.AppUser.museums
@@ -3796,12 +3437,6 @@ module.factory(
           method: "GET"
         },
 
-        // INTERNAL. Use Review.reviewer() instead.
-        "prototype$__get__reviewer": {
-          url: urlBase + "/Reviews/:id/reviewer",
-          method: "GET"
-        },
-
         /**
          * @ngdoc method
          * @name lbServices.Review#create
@@ -4224,65 +3859,6 @@ module.factory(
           method: "POST"
         },
 
-        // INTERNAL. Use AppUser.reviews.findById() instead.
-        "::findById::AppUser::reviews": {
-          params: {
-          'fk': '@fk'
-          },
-          url: urlBase + "/AppUsers/:id/reviews/:fk",
-          method: "GET"
-        },
-
-        // INTERNAL. Use AppUser.reviews.destroyById() instead.
-        "::destroyById::AppUser::reviews": {
-          params: {
-          'fk': '@fk'
-          },
-          url: urlBase + "/AppUsers/:id/reviews/:fk",
-          method: "DELETE"
-        },
-
-        // INTERNAL. Use AppUser.reviews.updateById() instead.
-        "::updateById::AppUser::reviews": {
-          params: {
-          'fk': '@fk'
-          },
-          url: urlBase + "/AppUsers/:id/reviews/:fk",
-          method: "PUT"
-        },
-
-        // INTERNAL. Use AppUser.reviews() instead.
-        "::get::AppUser::reviews": {
-          isArray: true,
-          url: urlBase + "/AppUsers/:id/reviews",
-          method: "GET"
-        },
-
-        // INTERNAL. Use AppUser.reviews.create() instead.
-        "::create::AppUser::reviews": {
-          url: urlBase + "/AppUsers/:id/reviews",
-          method: "POST"
-        },
-
-        // INTERNAL. Use AppUser.reviews.createMany() instead.
-        "::createMany::AppUser::reviews": {
-          isArray: true,
-          url: urlBase + "/AppUsers/:id/reviews",
-          method: "POST"
-        },
-
-        // INTERNAL. Use AppUser.reviews.destroyAll() instead.
-        "::delete::AppUser::reviews": {
-          url: urlBase + "/AppUsers/:id/reviews",
-          method: "DELETE"
-        },
-
-        // INTERNAL. Use AppUser.reviews.count() instead.
-        "::count::AppUser::reviews": {
-          url: urlBase + "/AppUsers/:id/reviews/count",
-          method: "GET"
-        },
-
         // INTERNAL. Use CoffeeShop.reviews.findById() instead.
         "::findById::CoffeeShop::reviews": {
           params: {
@@ -4520,42 +4096,6 @@ module.factory(
           return action.apply(R, arguments);
         };
 
-        /**
-         * @ngdoc method
-         * @name lbServices.Review#reviewer
-         * @methodOf lbServices.Review
-         *
-         * @description
-         *
-         * Fetches belongsTo relation reviewer.
-         *
-         * @param {Object=} parameters Request parameters.
-         *
-         *  - `id` – `{*}` - PersistedModel id
-         *
-         *  - `refresh` – `{boolean=}` -
-         *
-         * @param {function(Object,Object)=} successCb
-         *   Success callback with two arguments: `value`, `responseHeaders`.
-         *
-         * @param {function(Object)=} errorCb Error callback with one argument:
-         *   `httpResponse`.
-         *
-         * @returns {Object} An empty reference that will be
-         *   populated with the actual data once the response is returned
-         *   from the server.
-         *
-         * <em>
-         * (The remote method definition does not provide any description.
-         * This usually means the response is a `AppUser` object.)
-         * </em>
-         */
-        R.reviewer = function() {
-          var TargetResource = $injector.get("AppUser");
-          var action = TargetResource["::get::Review::reviewer"];
-          return action.apply(R, arguments);
-        };
-
     return R;
   }]);
 
@@ -4588,6 +4128,30 @@ module.factory(
         "prototype$__get__owner": {
           url: urlBase + "/Museums/:id/owner",
           method: "GET"
+        },
+
+        // INTERNAL. Use Museum.layout() instead.
+        "prototype$__get__layout": {
+          url: urlBase + "/Museums/:id/layout",
+          method: "GET"
+        },
+
+        // INTERNAL. Use Museum.layout.create() instead.
+        "prototype$__create__layout": {
+          url: urlBase + "/Museums/:id/layout",
+          method: "POST"
+        },
+
+        // INTERNAL. Use Museum.layout.update() instead.
+        "prototype$__update__layout": {
+          url: urlBase + "/Museums/:id/layout",
+          method: "PUT"
+        },
+
+        // INTERNAL. Use Museum.layout.destroy() instead.
+        "prototype$__destroy__layout": {
+          url: urlBase + "/Museums/:id/layout",
+          method: "DELETE"
         },
 
         /**
@@ -5070,6 +4634,12 @@ module.factory(
           url: urlBase + "/AppUsers/:id/museums/count",
           method: "GET"
         },
+
+        // INTERNAL. Use MuseumLayout.owner() instead.
+        "::get::MuseumLayout::owner": {
+          url: urlBase + "/MuseumLayouts/:id/owner",
+          method: "GET"
+        },
       }
     );
 
@@ -5246,6 +4816,866 @@ module.factory(
         R.owner = function() {
           var TargetResource = $injector.get("AppUser");
           var action = TargetResource["::get::Museum::owner"];
+          return action.apply(R, arguments);
+        };
+    /**
+     * @ngdoc object
+     * @name lbServices.Museum.layout
+     * @header lbServices.Museum.layout
+     * @object
+     * @description
+     *
+     * The object `Museum.layout` groups methods
+     * manipulating `MuseumLayout` instances related to `Museum`.
+     *
+     * Call {@link lbServices.Museum#layout Museum.layout()}
+     * to query all related instances.
+     */
+
+
+        /**
+         * @ngdoc method
+         * @name lbServices.Museum#layout
+         * @methodOf lbServices.Museum
+         *
+         * @description
+         *
+         * Fetches hasOne relation layout.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `id` – `{*}` - PersistedModel id
+         *
+         *  - `refresh` – `{boolean=}` -
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * <em>
+         * (The remote method definition does not provide any description.
+         * This usually means the response is a `MuseumLayout` object.)
+         * </em>
+         */
+        R.layout = function() {
+          var TargetResource = $injector.get("MuseumLayout");
+          var action = TargetResource["::get::Museum::layout"];
+          return action.apply(R, arguments);
+        };
+
+        /**
+         * @ngdoc method
+         * @name lbServices.Museum.layout#create
+         * @methodOf lbServices.Museum.layout
+         *
+         * @description
+         *
+         * Creates a new instance in layout of this model.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `id` – `{*}` - PersistedModel id
+         *
+         * @param {Object} postData Request data.
+         *
+         * This method expects a subset of model properties as request parameters.
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * <em>
+         * (The remote method definition does not provide any description.
+         * This usually means the response is a `MuseumLayout` object.)
+         * </em>
+         */
+        R.layout.create = function() {
+          var TargetResource = $injector.get("MuseumLayout");
+          var action = TargetResource["::create::Museum::layout"];
+          return action.apply(R, arguments);
+        };
+
+        /**
+         * @ngdoc method
+         * @name lbServices.Museum.layout#createMany
+         * @methodOf lbServices.Museum.layout
+         *
+         * @description
+         *
+         * Creates a new instance in layout of this model.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `id` – `{*}` - PersistedModel id
+         *
+         * @param {Object} postData Request data.
+         *
+         * This method expects a subset of model properties as request parameters.
+         *
+         * @param {function(Array.<Object>,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Array.<Object>} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * <em>
+         * (The remote method definition does not provide any description.
+         * This usually means the response is a `MuseumLayout` object.)
+         * </em>
+         */
+        R.layout.createMany = function() {
+          var TargetResource = $injector.get("MuseumLayout");
+          var action = TargetResource["::createMany::Museum::layout"];
+          return action.apply(R, arguments);
+        };
+
+        /**
+         * @ngdoc method
+         * @name lbServices.Museum.layout#destroy
+         * @methodOf lbServices.Museum.layout
+         *
+         * @description
+         *
+         * Deletes layout of this model.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `id` – `{*}` - PersistedModel id
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * This method returns no data.
+         */
+        R.layout.destroy = function() {
+          var TargetResource = $injector.get("MuseumLayout");
+          var action = TargetResource["::destroy::Museum::layout"];
+          return action.apply(R, arguments);
+        };
+
+        /**
+         * @ngdoc method
+         * @name lbServices.Museum.layout#update
+         * @methodOf lbServices.Museum.layout
+         *
+         * @description
+         *
+         * Update layout of this model.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `id` – `{*}` - PersistedModel id
+         *
+         * @param {Object} postData Request data.
+         *
+         * This method expects a subset of model properties as request parameters.
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * <em>
+         * (The remote method definition does not provide any description.
+         * This usually means the response is a `MuseumLayout` object.)
+         * </em>
+         */
+        R.layout.update = function() {
+          var TargetResource = $injector.get("MuseumLayout");
+          var action = TargetResource["::update::Museum::layout"];
+          return action.apply(R, arguments);
+        };
+
+    return R;
+  }]);
+
+/**
+ * @ngdoc object
+ * @name lbServices.MuseumLayout
+ * @header lbServices.MuseumLayout
+ * @object
+ *
+ * @description
+ *
+ * A $resource object for interacting with the `MuseumLayout` model.
+ *
+ * ## Example
+ *
+ * See
+ * {@link http://docs.angularjs.org/api/ngResource.$resource#example $resource}
+ * for an example of using this object.
+ *
+ */
+module.factory(
+  "MuseumLayout",
+  ['LoopBackResource', 'LoopBackAuth', '$injector', function(Resource, LoopBackAuth, $injector) {
+    var R = Resource(
+      urlBase + "/MuseumLayouts/:id",
+      { 'id': '@id' },
+      {
+
+        // INTERNAL. Use MuseumLayout.owner() instead.
+        "prototype$__get__owner": {
+          url: urlBase + "/MuseumLayouts/:id/owner",
+          method: "GET"
+        },
+
+        /**
+         * @ngdoc method
+         * @name lbServices.MuseumLayout#create
+         * @methodOf lbServices.MuseumLayout
+         *
+         * @description
+         *
+         * Create a new instance of the model and persist it into the data source.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *   This method does not accept any parameters.
+         *   Supply an empty object or omit this argument altogether.
+         *
+         * @param {Object} postData Request data.
+         *
+         * This method expects a subset of model properties as request parameters.
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * <em>
+         * (The remote method definition does not provide any description.
+         * This usually means the response is a `MuseumLayout` object.)
+         * </em>
+         */
+        "create": {
+          url: urlBase + "/MuseumLayouts",
+          method: "POST"
+        },
+
+        /**
+         * @ngdoc method
+         * @name lbServices.MuseumLayout#createMany
+         * @methodOf lbServices.MuseumLayout
+         *
+         * @description
+         *
+         * Create a new instance of the model and persist it into the data source.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *   This method does not accept any parameters.
+         *   Supply an empty object or omit this argument altogether.
+         *
+         * @param {Object} postData Request data.
+         *
+         * This method expects a subset of model properties as request parameters.
+         *
+         * @param {function(Array.<Object>,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Array.<Object>} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * <em>
+         * (The remote method definition does not provide any description.
+         * This usually means the response is a `MuseumLayout` object.)
+         * </em>
+         */
+        "createMany": {
+          isArray: true,
+          url: urlBase + "/MuseumLayouts",
+          method: "POST"
+        },
+
+        /**
+         * @ngdoc method
+         * @name lbServices.MuseumLayout#upsert
+         * @methodOf lbServices.MuseumLayout
+         *
+         * @description
+         *
+         * Update an existing model instance or insert a new one into the data source.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *   This method does not accept any parameters.
+         *   Supply an empty object or omit this argument altogether.
+         *
+         * @param {Object} postData Request data.
+         *
+         * This method expects a subset of model properties as request parameters.
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * <em>
+         * (The remote method definition does not provide any description.
+         * This usually means the response is a `MuseumLayout` object.)
+         * </em>
+         */
+        "upsert": {
+          url: urlBase + "/MuseumLayouts",
+          method: "PUT"
+        },
+
+        /**
+         * @ngdoc method
+         * @name lbServices.MuseumLayout#exists
+         * @methodOf lbServices.MuseumLayout
+         *
+         * @description
+         *
+         * Check whether a model instance exists in the data source.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `id` – `{*}` - Model id
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * Data properties:
+         *
+         *  - `exists` – `{boolean=}` -
+         */
+        "exists": {
+          url: urlBase + "/MuseumLayouts/:id/exists",
+          method: "GET"
+        },
+
+        /**
+         * @ngdoc method
+         * @name lbServices.MuseumLayout#findById
+         * @methodOf lbServices.MuseumLayout
+         *
+         * @description
+         *
+         * Find a model instance by id from the data source.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `id` – `{*}` - Model id
+         *
+         *  - `filter` – `{object=}` - Filter defining fields and include
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * <em>
+         * (The remote method definition does not provide any description.
+         * This usually means the response is a `MuseumLayout` object.)
+         * </em>
+         */
+        "findById": {
+          url: urlBase + "/MuseumLayouts/:id",
+          method: "GET"
+        },
+
+        /**
+         * @ngdoc method
+         * @name lbServices.MuseumLayout#find
+         * @methodOf lbServices.MuseumLayout
+         *
+         * @description
+         *
+         * Find all instances of the model matched by filter from the data source.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `filter` – `{object=}` - Filter defining fields, where, include, order, offset, and limit
+         *
+         * @param {function(Array.<Object>,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Array.<Object>} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * <em>
+         * (The remote method definition does not provide any description.
+         * This usually means the response is a `MuseumLayout` object.)
+         * </em>
+         */
+        "find": {
+          isArray: true,
+          url: urlBase + "/MuseumLayouts",
+          method: "GET"
+        },
+
+        /**
+         * @ngdoc method
+         * @name lbServices.MuseumLayout#findOne
+         * @methodOf lbServices.MuseumLayout
+         *
+         * @description
+         *
+         * Find first instance of the model matched by filter from the data source.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `filter` – `{object=}` - Filter defining fields, where, include, order, offset, and limit
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * <em>
+         * (The remote method definition does not provide any description.
+         * This usually means the response is a `MuseumLayout` object.)
+         * </em>
+         */
+        "findOne": {
+          url: urlBase + "/MuseumLayouts/findOne",
+          method: "GET"
+        },
+
+        /**
+         * @ngdoc method
+         * @name lbServices.MuseumLayout#updateAll
+         * @methodOf lbServices.MuseumLayout
+         *
+         * @description
+         *
+         * Update instances of the model matched by where from the data source.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `where` – `{object=}` - Criteria to match model instances
+         *
+         * @param {Object} postData Request data.
+         *
+         * This method expects a subset of model properties as request parameters.
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * The number of instances updated
+         */
+        "updateAll": {
+          url: urlBase + "/MuseumLayouts/update",
+          method: "POST"
+        },
+
+        /**
+         * @ngdoc method
+         * @name lbServices.MuseumLayout#deleteById
+         * @methodOf lbServices.MuseumLayout
+         *
+         * @description
+         *
+         * Delete a model instance by id from the data source.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `id` – `{*}` - Model id
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * <em>
+         * (The remote method definition does not provide any description.
+         * This usually means the response is a `MuseumLayout` object.)
+         * </em>
+         */
+        "deleteById": {
+          url: urlBase + "/MuseumLayouts/:id",
+          method: "DELETE"
+        },
+
+        /**
+         * @ngdoc method
+         * @name lbServices.MuseumLayout#count
+         * @methodOf lbServices.MuseumLayout
+         *
+         * @description
+         *
+         * Count instances of the model matched by where from the data source.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `where` – `{object=}` - Criteria to match model instances
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * Data properties:
+         *
+         *  - `count` – `{number=}` -
+         */
+        "count": {
+          url: urlBase + "/MuseumLayouts/count",
+          method: "GET"
+        },
+
+        /**
+         * @ngdoc method
+         * @name lbServices.MuseumLayout#prototype$updateAttributes
+         * @methodOf lbServices.MuseumLayout
+         *
+         * @description
+         *
+         * Update attributes for a model instance and persist it into the data source.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `id` – `{*}` - PersistedModel id
+         *
+         * @param {Object} postData Request data.
+         *
+         * This method expects a subset of model properties as request parameters.
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * <em>
+         * (The remote method definition does not provide any description.
+         * This usually means the response is a `MuseumLayout` object.)
+         * </em>
+         */
+        "prototype$updateAttributes": {
+          url: urlBase + "/MuseumLayouts/:id",
+          method: "PUT"
+        },
+
+        /**
+         * @ngdoc method
+         * @name lbServices.MuseumLayout#createChangeStream
+         * @methodOf lbServices.MuseumLayout
+         *
+         * @description
+         *
+         * Create a change stream.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *   This method does not accept any parameters.
+         *   Supply an empty object or omit this argument altogether.
+         *
+         * @param {Object} postData Request data.
+         *
+         *  - `options` – `{object=}` -
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * Data properties:
+         *
+         *  - `changes` – `{ReadableStream=}` -
+         */
+        "createChangeStream": {
+          url: urlBase + "/MuseumLayouts/change-stream",
+          method: "POST"
+        },
+
+        // INTERNAL. Use Museum.layout() instead.
+        "::get::Museum::layout": {
+          url: urlBase + "/Museums/:id/layout",
+          method: "GET"
+        },
+
+        // INTERNAL. Use Museum.layout.create() instead.
+        "::create::Museum::layout": {
+          url: urlBase + "/Museums/:id/layout",
+          method: "POST"
+        },
+
+        // INTERNAL. Use Museum.layout.createMany() instead.
+        "::createMany::Museum::layout": {
+          isArray: true,
+          url: urlBase + "/Museums/:id/layout",
+          method: "POST"
+        },
+
+        // INTERNAL. Use Museum.layout.update() instead.
+        "::update::Museum::layout": {
+          url: urlBase + "/Museums/:id/layout",
+          method: "PUT"
+        },
+
+        // INTERNAL. Use Museum.layout.destroy() instead.
+        "::destroy::Museum::layout": {
+          url: urlBase + "/Museums/:id/layout",
+          method: "DELETE"
+        },
+      }
+    );
+
+
+
+        /**
+         * @ngdoc method
+         * @name lbServices.MuseumLayout#updateOrCreate
+         * @methodOf lbServices.MuseumLayout
+         *
+         * @description
+         *
+         * Update an existing model instance or insert a new one into the data source.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *   This method does not accept any parameters.
+         *   Supply an empty object or omit this argument altogether.
+         *
+         * @param {Object} postData Request data.
+         *
+         * This method expects a subset of model properties as request parameters.
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * <em>
+         * (The remote method definition does not provide any description.
+         * This usually means the response is a `MuseumLayout` object.)
+         * </em>
+         */
+        R["updateOrCreate"] = R["upsert"];
+
+        /**
+         * @ngdoc method
+         * @name lbServices.MuseumLayout#update
+         * @methodOf lbServices.MuseumLayout
+         *
+         * @description
+         *
+         * Update instances of the model matched by where from the data source.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `where` – `{object=}` - Criteria to match model instances
+         *
+         * @param {Object} postData Request data.
+         *
+         * This method expects a subset of model properties as request parameters.
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * The number of instances updated
+         */
+        R["update"] = R["updateAll"];
+
+        /**
+         * @ngdoc method
+         * @name lbServices.MuseumLayout#destroyById
+         * @methodOf lbServices.MuseumLayout
+         *
+         * @description
+         *
+         * Delete a model instance by id from the data source.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `id` – `{*}` - Model id
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * <em>
+         * (The remote method definition does not provide any description.
+         * This usually means the response is a `MuseumLayout` object.)
+         * </em>
+         */
+        R["destroyById"] = R["deleteById"];
+
+        /**
+         * @ngdoc method
+         * @name lbServices.MuseumLayout#removeById
+         * @methodOf lbServices.MuseumLayout
+         *
+         * @description
+         *
+         * Delete a model instance by id from the data source.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `id` – `{*}` - Model id
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * <em>
+         * (The remote method definition does not provide any description.
+         * This usually means the response is a `MuseumLayout` object.)
+         * </em>
+         */
+        R["removeById"] = R["deleteById"];
+
+
+    /**
+    * @ngdoc property
+    * @name lbServices.MuseumLayout#modelName
+    * @propertyOf lbServices.MuseumLayout
+    * @description
+    * The name of the model represented by this $resource,
+    * i.e. `MuseumLayout`.
+    */
+    R.modelName = "MuseumLayout";
+
+
+        /**
+         * @ngdoc method
+         * @name lbServices.MuseumLayout#owner
+         * @methodOf lbServices.MuseumLayout
+         *
+         * @description
+         *
+         * Fetches belongsTo relation owner.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `id` – `{*}` - PersistedModel id
+         *
+         *  - `refresh` – `{boolean=}` -
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * <em>
+         * (The remote method definition does not provide any description.
+         * This usually means the response is a `Museum` object.)
+         * </em>
+         */
+        R.owner = function() {
+          var TargetResource = $injector.get("Museum");
+          var action = TargetResource["::get::MuseumLayout::owner"];
           return action.apply(R, arguments);
         };
 

@@ -13,11 +13,6 @@
 	},
 	"validations": [],
 	"relations": {
-		"reviews": {
-			"type": "hasMany",
-			"model": "Review",
-			"foreignKey": "publisherId"
-		},
 		"museums": {
 			"type": "hasMany",
 			"model": "Museum",

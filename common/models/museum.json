@@ -32,6 +32,11 @@
 			"type": "belongsTo",
 			"model": "AppUser",
 			"foreignKey": "ownerId"
+		},
+		"layout" : {
+			"type" : "hasOne",
+			"model" : "MuseumLayout",
+			"foreignKey" : "museumId"
 		}
 	},
 	"acls": [
