@@ -354,12 +354,76 @@ ul
 .inizio-button
 {
 
-
 	margin-top: 30px;
 	min-width: 230px;
 }
 
-#create-haptic-slider-slider-0 .slider-selection {
+
+/* ------------- VIBRATION TIME SLIDER ------------- */
+
+
+#haptic-slider-vibration-0 .slider-selection
+{
 	background: #e3e3e3;
-	color: #337ab7
+}
+
+#haptic-slider-vibration-0 .slider-track,
+#haptic-slider-vibration-0 .tooltip-inner
+
+{
+	background: #428bca;
+}
+
+
+/* ------------- VIBRATION INTENSITY SLIDER ------------- */
+
+
+#haptic-slider-intensity-0 .slider-selection
+{
+	background: #e3e3e3;
+}
+
+#haptic-slider-intensity-0 .slider-track,
+#haptic-slider-intensity-0 .tooltip-inner,
+#haptic-slider-intensity-0 .slider-handle
+
+{
+	background: #5cb85c;
+}
+
+/* ------------- VIBRATION PAUSE SLIDER ------------- */
+
+
+
+#haptic-slider-pause-0 .slider-selection
+{
+
+	background: #e3e3e3;
+}
+
+#haptic-slider-pause-0 .slider-track,
+#haptic-slider-pause-0 .slider-handle,
+#haptic-slider-pause-0 .tooltip-inner
+{
+	background: #101010;
+}
+
+
+/* -------- */
+
+/* UNITY */
+
+div.logo { width: 204px; height: 38px; float: left; background: url(logo.png) 0 0 no-repeat; position: relative; z-index: 10; }
+div.title { height: 38px; line-height: 38px; padding: 0 10px; margin: 0 1px 0 0; float: right; color: #333; text-align: right; font-size: 18px; position: relative; z-index: 10; }
+.template-wrap { }
+.template-wrap canvas { margin: 0 0 10px 0; position: relative; z-index: 9;  }
+.fullscreen { float: right; position: relative; z-index: 10; }
+
+body.template { }
+.template .template-wrap { }
+.template .template-wrap canvas { }
+
+.emscripten{
+	width: 800px;
+	height: auto;
 }

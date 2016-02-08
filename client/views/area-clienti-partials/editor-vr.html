@@ -1,1 +1,23 @@
 <h3>Editor VR</h3>
+
+<div class="template">
+    <div class="template-wrap clear">
+		<canvas class="emscripten" id="canvas" oncontextmenu="event.preventDefault()" height="600px" width="960px"></canvas>
+		<div class="fullscreen">
+			<img src="unity/TemplateData/fullscreen.png" width="38" height="38" alt="Fullscreen" title="Fullscreen" onclick="SetFullscreen(1);" />
+		</div>
+
+    </div>
+    <script type='text/javascript'>
+		var Module = {
+			TOTAL_MEMORY: 1073741824,
+			errorhandler: null, // arguments: err, url, line. This function must return 'true' if the error is handled, otherwise 'false'
+			compatibilitycheck: null,
+			dataUrl: "unity/Release/VRSeum.data",
+			codeUrl: "unity/Release/VRSeum.js",
+			memUrl: "unity/Release/VRSeum.mem",
+		};
+	</script>
+	<script src="unity/Release/UnityLoader.js"></script>
+
+</div>

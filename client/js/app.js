@@ -6,7 +6,8 @@ angular
 		'angularUtils.directives.uiBreadcrumbs',
 		'anim-in-out',
 		'angular.filter',
-		'angularFileUpload'
+		'angularFileUpload',
+		'chart.js'
 
 	])
 	.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider,

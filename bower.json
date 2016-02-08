@@ -15,7 +15,8 @@
     "angular-animate": "^1.4.9",
     "angular-filter": "^0.5.8",
     "angular-file-upload": "^2.2.0",
-    "seiyria-bootstrap-slider": "^6.0.17"
+    "seiyria-bootstrap-slider": "^6.0.17",
+    "angular-chart.js": "^0.8.8"
   },
   "ignore": {},
   "devDependencies": {},
