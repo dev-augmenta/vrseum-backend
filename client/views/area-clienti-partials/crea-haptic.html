@@ -24,7 +24,7 @@
 		<tbody>
 			<tr>
 
-				<td class="text-center"><input id="haptic-slider-vibration-0" class="haptic-slider-vibration-0"
+				<td class="text-center"><input ng-model="slider.sliderValue" id="haptic-slider-vibration-0" class="haptic-slider-vibration-0"
 						   data-slider-id="haptic-slider-vibration-0"
 						   type="text"
 						   data-slider-min="0"
@@ -55,7 +55,7 @@
 						   /></td>
 
 				<td class="text-center" style="vertical-align: middle;">
-					<i class="fa fa-plus-circle fa-3x"></i>
+					<a ng-click="addStep()"><i class="fa fa-plus-circle fa-3x"></i></a>
 				</td>
 
 			</tr>
