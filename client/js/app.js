@@ -78,6 +78,7 @@ angular
 					data : {
 						displayName: 'Crea Haptic'
 					},
+					controller: 'HapticController',
 					authenticate: true
 				})
 				.state('area-clienti.scarica-haptic', {

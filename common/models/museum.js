@@ -21,7 +21,23 @@ module.exports = function(Museum) {
 
 		};
 	});*/
-	
+
+	Museum.observe('after save', function createMuseumDefaultLayout(ctx, next){
+
+		if( ctx.isNewInstance )
+		{
+			var layout = Museum.app.models.MuseumLayout;
+			layout.create({museumId : ctx.instance.id}, function(error, layoutInstance){
+				if( layoutInstance && !error )
+				{
+					console.log("Create new layout with id: " + layoutInstance.id + " for museum with id " + ctx.instance.id );
+				}
+			});
+		}
+
+		next();
+	});
+
 
 
 };

@@ -128,13 +128,13 @@ angular
 					if (!helper.support)
 						return;
 
-					console.log(params.files);
+					//console.log(params.files);
 					var params = scope.$eval(attributes.ngThumb);
 
-					if (!helper.isFile(params.file))
-						return;
-					if (!helper.isImage(params.file))
-						return;
+					//if (!helper.isFile(params.file))
+					//	return;
+					//if (!helper.isImage(params.file))
+					//	return;
 
 					var canvas = element.find('canvas');
 					var reader = new FileReader();
