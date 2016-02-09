@@ -1,1 +1,37 @@
-<h3>Libreria Haptic</h3>
+<h3>I miei Haptics</h3>
+
+<table class="table table-striped">
+	<thead>
+		<tr>
+			<th>Nome</th>
+			<th>Loop</th>
+			<th>Autore</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr ng-repeat="haptic in haptics">
+			<td>{{haptic.name}}</td>
+			<td>{{haptic.loop}}</td>
+			<td>{{currentUser.username}}</td>
+		</tr>
+	</tbody>
+</table>
+
+
+<h3>Libreria Haptics</h3>
+<table class="table table-striped">
+	<thead>
+		<tr>
+			<th>Nome</th>
+			<th>Loop</th>
+			<th>Autore</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr ng-repeat="pubHaptic in pubHaptics">
+			<td>{{pubHaptic.name}}</td>
+			<td>{{pubHaptic.loop}}</td>
+			<td>{{pubHaptic.owner.username}}</td>
+		</tr>
+	</tbody>
+</table>

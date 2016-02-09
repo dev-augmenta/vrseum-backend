@@ -368,7 +368,8 @@ ul
 }
 
 #haptic-slider-vibration-0 .slider-track,
-#haptic-slider-vibration-0 .tooltip-inner
+#haptic-slider-vibration-0 .tooltip-inner,
+#haptic-slider-intensity-0 .slider-handle
 
 {
 	background: #428bca;
@@ -407,6 +408,33 @@ ul
 {
 	background: #101010;
 }
+
+
+/* SLIDERS AND GRAPH */
+.red
+{
+	color: #c9302c;
+}
+.red:hover
+{
+	color: #d43f3a;
+}
+
+.green
+{
+	color : #5cb85c;
+}
+.green:hover
+{
+	color : #4cae4c;
+}
+
+.pointer{
+	cursor: pointer;
+}
+
+
+
 
 
 /* -------- */

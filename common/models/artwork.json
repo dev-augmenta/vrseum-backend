@@ -1,45 +1,45 @@
 {
-	"name": "Artwork",
-	"base": "PersistedModel",
-	"idInjection": true,
-	"options": {
-		"validateUpsert": true
-	},
-	"properties": {
-		"name": {
-			"type": "string",
-			"required": true
-		},
-		"description": {
-			"type": "string"
-		},
-		"ownerId": {
-			"type": "object",
-			"required": true
-		},
-		"thumbnail" : {
-			"type" : "string",
-			"required" : "false"
-		},
-		"image" : {
-			"type" : "string",
-			"required" : "false"
-		}
-	},
-	"validations": [],
-	"relations": {
-		"owner": {
-			"type": "belongsTo",
-			"model": "AppUser",
-			"foreignKey": "ownerId"
-		}
-	},
-	"acls": [
-		{
-			"principalType": "ROLE",
-			"principalId": "$everyone",
-			"permission": "ALLOW"
-		}
-	],
-	"methods": {}
+  "name": "Artwork",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "string"
+    },
+    "ownerId": {
+      "type": "object",
+      "required": true
+    },
+    "thumbnail": {
+      "type": "string",
+      "required": "false"
+    },
+    "image": {
+      "type": "string",
+      "required": "false"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "owner": {
+      "type": "belongsTo",
+      "model": "AppUser",
+      "foreignKey": "ownerId"
+    }
+  },
+  "acls": [
+    {
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW"
+    }
+  ],
+  "methods": {}
 }

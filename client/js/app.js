@@ -71,7 +71,8 @@ angular
 					data : {
 						displayName: 'Haptic'
 					},
-					authenticate: true
+					authenticate: true,
+					controller: 'AllHapticsController'
 				})
 				.state('area-clienti.crea-haptic', {
 					url: '/crea-haptic',

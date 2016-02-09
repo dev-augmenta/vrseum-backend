@@ -1,69 +1,73 @@
 {
-	"_meta": {
-		"sources": [
-			"loopback/common/models",
-			"loopback/server/models",
-			"../common/models",
-			"./models",
-			"../node_modules/loopback-component-passport/lib/models"
-		],
-		"mixins": [
-			"loopback/common/mixins",
-			"loopback/server/mixins",
-			"../common/mixins",
-			"./mixins"
-		]
-	},
-	"AppUser": {
-		"dataSource": "mongolab",
-		"public": true
-	},
-	"accessToken": {
-		"dataSource": "mongolab",
-		"public": false
-	},
-	"userCredential": {
-		"dataSource": "mongolab",
-		"public": false
-	},
-	"userIdentity": {
-		"dataSource": "mongolab",
-		"public": false
-	},
-	"ACL": {
-		"dataSource": "mongolab",
-		"public": false
-	},
-	"RoleMapping": {
-		"dataSource": "mongolab",
-		"public": false
-	},
-	"Role": {
-		"dataSource": "mongolab",
-		"public": false
-	},
-	"CoffeeShop": {
-		"dataSource": "mongolab",
-		"public": true
-	},
-	"Review": {
-		"dataSource": "mongolab",
-		"public": true
-	},
-	"Museum": {
-		"dataSource": "mongolab",
-		"public": true
-	},
-	"MuseumLayout" : {
-		"dataSource" : "mongolab",
-		"public" : true
-	},
-	"file": {
-		"dataSource": "mongolab",
-		"public": true
-	},
-	"container": {
-		"dataSource": "storage",
-		"public": true
-	}
+  "_meta": {
+    "sources": [
+      "loopback/common/models",
+      "loopback/server/models",
+      "../common/models",
+      "./models",
+      "../node_modules/loopback-component-passport/lib/models"
+    ],
+    "mixins": [
+      "loopback/common/mixins",
+      "loopback/server/mixins",
+      "../common/mixins",
+      "./mixins"
+    ]
+  },
+  "AppUser": {
+    "dataSource": "mongolab",
+    "public": true
+  },
+  "accessToken": {
+    "dataSource": "mongolab",
+    "public": false
+  },
+  "userCredential": {
+    "dataSource": "mongolab",
+    "public": false
+  },
+  "userIdentity": {
+    "dataSource": "mongolab",
+    "public": false
+  },
+  "ACL": {
+    "dataSource": "mongolab",
+    "public": false
+  },
+  "RoleMapping": {
+    "dataSource": "mongolab",
+    "public": false
+  },
+  "Role": {
+    "dataSource": "mongolab",
+    "public": false
+  },
+  "CoffeeShop": {
+    "dataSource": "mongolab",
+    "public": true
+  },
+  "Review": {
+    "dataSource": "mongolab",
+    "public": true
+  },
+  "Museum": {
+    "dataSource": "mongolab",
+    "public": true
+  },
+  "MuseumLayout": {
+    "dataSource": "mongolab",
+    "public": true
+  },
+  "file": {
+    "dataSource": "mongolab",
+    "public": true
+  },
+  "container": {
+    "dataSource": "storage",
+    "public": true
+  },
+  "Haptic": {
+    "dataSource": "mongolab",
+    "public": true
+  }
 }

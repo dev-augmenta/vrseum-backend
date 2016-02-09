@@ -1,5 +1,6 @@
 {
-  "name": "Museum",
+  "name": "Haptic",
+  "plural": "Haptics",
   "base": "PersistedModel",
   "idInjection": true,
   "options": {
@@ -10,20 +11,25 @@
       "type": "string",
       "required": true
     },
-    "description": {
-      "type": "string"
+    "pattern": {
+      "type": [
+        "number"
+      ],
+      "required": true
+    },
+    "intensity": {
+      "type": [
+        "number"
+      ],
+      "required": true
+    },
+    "loop": {
+      "type": "number",
+      "required": true
     },
     "ownerId": {
       "type": "object",
       "required": true
-    },
-    "isOpen": {
-      "type": "boolean",
-      "required": true
-    },
-    "thumbnail": {
-      "type": "string",
-      "required": "false"
     }
   },
   "validations": [],
@@ -32,15 +38,10 @@
       "type": "belongsTo",
       "model": "AppUser",
       "foreignKey": "ownerId"
-    },
-    "layout": {
-      "type": "hasOne",
-      "model": "MuseumLayout",
-      "foreignKey": "museumId"
     }
   },
   "acls": [
-    {
+	  {
       "principalType": "ROLE",
       "principalId": "$everyone",
       "permission": "DENY"
@@ -54,7 +55,7 @@
     {
       "accessType": "READ",
       "principalType": "ROLE",
-      "principalId": "$authenticated",
+      "principalId": "$everyone",
       "permission": "ALLOW",
       "property": "find"
     },
@@ -75,6 +76,7 @@
       "principalId": "$authenticated",
       "permission": "ALLOW",
       "property": "__get__owner"
+	  
     }
   ],
   "methods": {}

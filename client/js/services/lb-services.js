@@ -419,6 +419,33 @@ module.factory(
           method: "PUT"
         },
 
+        // INTERNAL. Use AppUser.haptics.findById() instead.
+        "prototype$__findById__haptics": {
+          params: {
+          'fk': '@fk'
+          },
+          url: urlBase + "/AppUsers/:id/haptics/:fk",
+          method: "GET"
+        },
+
+        // INTERNAL. Use AppUser.haptics.destroyById() instead.
+        "prototype$__destroyById__haptics": {
+          params: {
+          'fk': '@fk'
+          },
+          url: urlBase + "/AppUsers/:id/haptics/:fk",
+          method: "DELETE"
+        },
+
+        // INTERNAL. Use AppUser.haptics.updateById() instead.
+        "prototype$__updateById__haptics": {
+          params: {
+          'fk': '@fk'
+          },
+          url: urlBase + "/AppUsers/:id/haptics/:fk",
+          method: "PUT"
+        },
+
         /**
          * @ngdoc method
          * @name lbServices.AppUser#prototype$__get__accessTokens
@@ -852,6 +879,31 @@ module.factory(
         // INTERNAL. Use AppUser.museums.count() instead.
         "prototype$__count__museums": {
           url: urlBase + "/AppUsers/:id/museums/count",
+          method: "GET"
+        },
+
+        // INTERNAL. Use AppUser.haptics() instead.
+        "prototype$__get__haptics": {
+          isArray: true,
+          url: urlBase + "/AppUsers/:id/haptics",
+          method: "GET"
+        },
+
+        // INTERNAL. Use AppUser.haptics.create() instead.
+        "prototype$__create__haptics": {
+          url: urlBase + "/AppUsers/:id/haptics",
+          method: "POST"
+        },
+
+        // INTERNAL. Use AppUser.haptics.destroyAll() instead.
+        "prototype$__delete__haptics": {
+          url: urlBase + "/AppUsers/:id/haptics",
+          method: "DELETE"
+        },
+
+        // INTERNAL. Use AppUser.haptics.count() instead.
+        "prototype$__count__haptics": {
+          url: urlBase + "/AppUsers/:id/haptics/count",
           method: "GET"
         },
 
@@ -1541,6 +1593,12 @@ module.factory(
           method: "GET"
         },
 
+        // INTERNAL. Use Haptic.owner() instead.
+        "::get::Haptic::owner": {
+          url: urlBase + "/Haptics/:id/owner",
+          method: "GET"
+        },
+
         /**
          * @ngdoc method
          * @name lbServices.AppUser#getCurrent
@@ -2061,6 +2119,307 @@ module.factory(
         R.museums.updateById = function() {
           var TargetResource = $injector.get("Museum");
           var action = TargetResource["::updateById::AppUser::museums"];
+          return action.apply(R, arguments);
+        };
+    /**
+     * @ngdoc object
+     * @name lbServices.AppUser.haptics
+     * @header lbServices.AppUser.haptics
+     * @object
+     * @description
+     *
+     * The object `AppUser.haptics` groups methods
+     * manipulating `Haptic` instances related to `AppUser`.
+     *
+     * Call {@link lbServices.AppUser#haptics AppUser.haptics()}
+     * to query all related instances.
+     */
+
+
+        /**
+         * @ngdoc method
+         * @name lbServices.AppUser#haptics
+         * @methodOf lbServices.AppUser
+         *
+         * @description
+         *
+         * Queries haptics of AppUser.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `id` – `{*}` - User id
+         *
+         *  - `filter` – `{object=}` -
+         *
+         * @param {function(Array.<Object>,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Array.<Object>} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * <em>
+         * (The remote method definition does not provide any description.
+         * This usually means the response is a `Haptic` object.)
+         * </em>
+         */
+        R.haptics = function() {
+          var TargetResource = $injector.get("Haptic");
+          var action = TargetResource["::get::AppUser::haptics"];
+          return action.apply(R, arguments);
+        };
+
+        /**
+         * @ngdoc method
+         * @name lbServices.AppUser.haptics#count
+         * @methodOf lbServices.AppUser.haptics
+         *
+         * @description
+         *
+         * Counts haptics of AppUser.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `id` – `{*}` - User id
+         *
+         *  - `where` – `{object=}` - Criteria to match model instances
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * Data properties:
+         *
+         *  - `count` – `{number=}` -
+         */
+        R.haptics.count = function() {
+          var TargetResource = $injector.get("Haptic");
+          var action = TargetResource["::count::AppUser::haptics"];
+          return action.apply(R, arguments);
+        };
+
+        /**
+         * @ngdoc method
+         * @name lbServices.AppUser.haptics#create
+         * @methodOf lbServices.AppUser.haptics
+         *
+         * @description
+         *
+         * Creates a new instance in haptics of this model.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `id` – `{*}` - User id
+         *
+         * @param {Object} postData Request data.
+         *
+         * This method expects a subset of model properties as request parameters.
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * <em>
+         * (The remote method definition does not provide any description.
+         * This usually means the response is a `Haptic` object.)
+         * </em>
+         */
+        R.haptics.create = function() {
+          var TargetResource = $injector.get("Haptic");
+          var action = TargetResource["::create::AppUser::haptics"];
+          return action.apply(R, arguments);
+        };
+
+        /**
+         * @ngdoc method
+         * @name lbServices.AppUser.haptics#createMany
+         * @methodOf lbServices.AppUser.haptics
+         *
+         * @description
+         *
+         * Creates a new instance in haptics of this model.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `id` – `{*}` - User id
+         *
+         * @param {Object} postData Request data.
+         *
+         * This method expects a subset of model properties as request parameters.
+         *
+         * @param {function(Array.<Object>,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Array.<Object>} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * <em>
+         * (The remote method definition does not provide any description.
+         * This usually means the response is a `Haptic` object.)
+         * </em>
+         */
+        R.haptics.createMany = function() {
+          var TargetResource = $injector.get("Haptic");
+          var action = TargetResource["::createMany::AppUser::haptics"];
+          return action.apply(R, arguments);
+        };
+
+        /**
+         * @ngdoc method
+         * @name lbServices.AppUser.haptics#destroyAll
+         * @methodOf lbServices.AppUser.haptics
+         *
+         * @description
+         *
+         * Deletes all haptics of this model.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `id` – `{*}` - User id
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * This method returns no data.
+         */
+        R.haptics.destroyAll = function() {
+          var TargetResource = $injector.get("Haptic");
+          var action = TargetResource["::delete::AppUser::haptics"];
+          return action.apply(R, arguments);
+        };
+
+        /**
+         * @ngdoc method
+         * @name lbServices.AppUser.haptics#destroyById
+         * @methodOf lbServices.AppUser.haptics
+         *
+         * @description
+         *
+         * Delete a related item by id for haptics.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `id` – `{*}` - User id
+         *
+         *  - `fk` – `{*}` - Foreign key for haptics
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * This method returns no data.
+         */
+        R.haptics.destroyById = function() {
+          var TargetResource = $injector.get("Haptic");
+          var action = TargetResource["::destroyById::AppUser::haptics"];
+          return action.apply(R, arguments);
+        };
+
+        /**
+         * @ngdoc method
+         * @name lbServices.AppUser.haptics#findById
+         * @methodOf lbServices.AppUser.haptics
+         *
+         * @description
+         *
+         * Find a related item by id for haptics.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `id` – `{*}` - User id
+         *
+         *  - `fk` – `{*}` - Foreign key for haptics
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * <em>
+         * (The remote method definition does not provide any description.
+         * This usually means the response is a `Haptic` object.)
+         * </em>
+         */
+        R.haptics.findById = function() {
+          var TargetResource = $injector.get("Haptic");
+          var action = TargetResource["::findById::AppUser::haptics"];
+          return action.apply(R, arguments);
+        };
+
+        /**
+         * @ngdoc method
+         * @name lbServices.AppUser.haptics#updateById
+         * @methodOf lbServices.AppUser.haptics
+         *
+         * @description
+         *
+         * Update a related item by id for haptics.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `id` – `{*}` - User id
+         *
+         *  - `fk` – `{*}` - Foreign key for haptics
+         *
+         * @param {Object} postData Request data.
+         *
+         * This method expects a subset of model properties as request parameters.
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * <em>
+         * (The remote method definition does not provide any description.
+         * This usually means the response is a `Haptic` object.)
+         * </em>
+         */
+        R.haptics.updateById = function() {
+          var TargetResource = $injector.get("Haptic");
+          var action = TargetResource["::updateById::AppUser::haptics"];
           return action.apply(R, arguments);
         };
 
@@ -6685,6 +7044,699 @@ module.factory(
     */
     R.modelName = "Container";
 
+
+    return R;
+  }]);
+
+/**
+ * @ngdoc object
+ * @name lbServices.Haptic
+ * @header lbServices.Haptic
+ * @object
+ *
+ * @description
+ *
+ * A $resource object for interacting with the `Haptic` model.
+ *
+ * ## Example
+ *
+ * See
+ * {@link http://docs.angularjs.org/api/ngResource.$resource#example $resource}
+ * for an example of using this object.
+ *
+ */
+module.factory(
+  "Haptic",
+  ['LoopBackResource', 'LoopBackAuth', '$injector', function(Resource, LoopBackAuth, $injector) {
+    var R = Resource(
+      urlBase + "/Haptics/:id",
+      { 'id': '@id' },
+      {
+
+        // INTERNAL. Use Haptic.owner() instead.
+        "prototype$__get__owner": {
+          url: urlBase + "/Haptics/:id/owner",
+          method: "GET"
+        },
+
+        /**
+         * @ngdoc method
+         * @name lbServices.Haptic#create
+         * @methodOf lbServices.Haptic
+         *
+         * @description
+         *
+         * Create a new instance of the model and persist it into the data source.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *   This method does not accept any parameters.
+         *   Supply an empty object or omit this argument altogether.
+         *
+         * @param {Object} postData Request data.
+         *
+         * This method expects a subset of model properties as request parameters.
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * <em>
+         * (The remote method definition does not provide any description.
+         * This usually means the response is a `Haptic` object.)
+         * </em>
+         */
+        "create": {
+          url: urlBase + "/Haptics",
+          method: "POST"
+        },
+
+        /**
+         * @ngdoc method
+         * @name lbServices.Haptic#createMany
+         * @methodOf lbServices.Haptic
+         *
+         * @description
+         *
+         * Create a new instance of the model and persist it into the data source.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *   This method does not accept any parameters.
+         *   Supply an empty object or omit this argument altogether.
+         *
+         * @param {Object} postData Request data.
+         *
+         * This method expects a subset of model properties as request parameters.
+         *
+         * @param {function(Array.<Object>,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Array.<Object>} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * <em>
+         * (The remote method definition does not provide any description.
+         * This usually means the response is a `Haptic` object.)
+         * </em>
+         */
+        "createMany": {
+          isArray: true,
+          url: urlBase + "/Haptics",
+          method: "POST"
+        },
+
+        /**
+         * @ngdoc method
+         * @name lbServices.Haptic#upsert
+         * @methodOf lbServices.Haptic
+         *
+         * @description
+         *
+         * Update an existing model instance or insert a new one into the data source.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *   This method does not accept any parameters.
+         *   Supply an empty object or omit this argument altogether.
+         *
+         * @param {Object} postData Request data.
+         *
+         * This method expects a subset of model properties as request parameters.
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * <em>
+         * (The remote method definition does not provide any description.
+         * This usually means the response is a `Haptic` object.)
+         * </em>
+         */
+        "upsert": {
+          url: urlBase + "/Haptics",
+          method: "PUT"
+        },
+
+        /**
+         * @ngdoc method
+         * @name lbServices.Haptic#exists
+         * @methodOf lbServices.Haptic
+         *
+         * @description
+         *
+         * Check whether a model instance exists in the data source.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `id` – `{*}` - Model id
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * Data properties:
+         *
+         *  - `exists` – `{boolean=}` -
+         */
+        "exists": {
+          url: urlBase + "/Haptics/:id/exists",
+          method: "GET"
+        },
+
+        /**
+         * @ngdoc method
+         * @name lbServices.Haptic#findById
+         * @methodOf lbServices.Haptic
+         *
+         * @description
+         *
+         * Find a model instance by id from the data source.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `id` – `{*}` - Model id
+         *
+         *  - `filter` – `{object=}` - Filter defining fields and include
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * <em>
+         * (The remote method definition does not provide any description.
+         * This usually means the response is a `Haptic` object.)
+         * </em>
+         */
+        "findById": {
+          url: urlBase + "/Haptics/:id",
+          method: "GET"
+        },
+
+        /**
+         * @ngdoc method
+         * @name lbServices.Haptic#find
+         * @methodOf lbServices.Haptic
+         *
+         * @description
+         *
+         * Find all instances of the model matched by filter from the data source.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `filter` – `{object=}` - Filter defining fields, where, include, order, offset, and limit
+         *
+         * @param {function(Array.<Object>,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Array.<Object>} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * <em>
+         * (The remote method definition does not provide any description.
+         * This usually means the response is a `Haptic` object.)
+         * </em>
+         */
+        "find": {
+          isArray: true,
+          url: urlBase + "/Haptics",
+          method: "GET"
+        },
+
+        /**
+         * @ngdoc method
+         * @name lbServices.Haptic#findOne
+         * @methodOf lbServices.Haptic
+         *
+         * @description
+         *
+         * Find first instance of the model matched by filter from the data source.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `filter` – `{object=}` - Filter defining fields, where, include, order, offset, and limit
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * <em>
+         * (The remote method definition does not provide any description.
+         * This usually means the response is a `Haptic` object.)
+         * </em>
+         */
+        "findOne": {
+          url: urlBase + "/Haptics/findOne",
+          method: "GET"
+        },
+
+        /**
+         * @ngdoc method
+         * @name lbServices.Haptic#updateAll
+         * @methodOf lbServices.Haptic
+         *
+         * @description
+         *
+         * Update instances of the model matched by where from the data source.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `where` – `{object=}` - Criteria to match model instances
+         *
+         * @param {Object} postData Request data.
+         *
+         * This method expects a subset of model properties as request parameters.
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * The number of instances updated
+         */
+        "updateAll": {
+          url: urlBase + "/Haptics/update",
+          method: "POST"
+        },
+
+        /**
+         * @ngdoc method
+         * @name lbServices.Haptic#deleteById
+         * @methodOf lbServices.Haptic
+         *
+         * @description
+         *
+         * Delete a model instance by id from the data source.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `id` – `{*}` - Model id
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * <em>
+         * (The remote method definition does not provide any description.
+         * This usually means the response is a `Haptic` object.)
+         * </em>
+         */
+        "deleteById": {
+          url: urlBase + "/Haptics/:id",
+          method: "DELETE"
+        },
+
+        /**
+         * @ngdoc method
+         * @name lbServices.Haptic#count
+         * @methodOf lbServices.Haptic
+         *
+         * @description
+         *
+         * Count instances of the model matched by where from the data source.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `where` – `{object=}` - Criteria to match model instances
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * Data properties:
+         *
+         *  - `count` – `{number=}` -
+         */
+        "count": {
+          url: urlBase + "/Haptics/count",
+          method: "GET"
+        },
+
+        /**
+         * @ngdoc method
+         * @name lbServices.Haptic#prototype$updateAttributes
+         * @methodOf lbServices.Haptic
+         *
+         * @description
+         *
+         * Update attributes for a model instance and persist it into the data source.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `id` – `{*}` - PersistedModel id
+         *
+         * @param {Object} postData Request data.
+         *
+         * This method expects a subset of model properties as request parameters.
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * <em>
+         * (The remote method definition does not provide any description.
+         * This usually means the response is a `Haptic` object.)
+         * </em>
+         */
+        "prototype$updateAttributes": {
+          url: urlBase + "/Haptics/:id",
+          method: "PUT"
+        },
+
+        /**
+         * @ngdoc method
+         * @name lbServices.Haptic#createChangeStream
+         * @methodOf lbServices.Haptic
+         *
+         * @description
+         *
+         * Create a change stream.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *   This method does not accept any parameters.
+         *   Supply an empty object or omit this argument altogether.
+         *
+         * @param {Object} postData Request data.
+         *
+         *  - `options` – `{object=}` -
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * Data properties:
+         *
+         *  - `changes` – `{ReadableStream=}` -
+         */
+        "createChangeStream": {
+          url: urlBase + "/Haptics/change-stream",
+          method: "POST"
+        },
+
+        // INTERNAL. Use AppUser.haptics.findById() instead.
+        "::findById::AppUser::haptics": {
+          params: {
+          'fk': '@fk'
+          },
+          url: urlBase + "/AppUsers/:id/haptics/:fk",
+          method: "GET"
+        },
+
+        // INTERNAL. Use AppUser.haptics.destroyById() instead.
+        "::destroyById::AppUser::haptics": {
+          params: {
+          'fk': '@fk'
+          },
+          url: urlBase + "/AppUsers/:id/haptics/:fk",
+          method: "DELETE"
+        },
+
+        // INTERNAL. Use AppUser.haptics.updateById() instead.
+        "::updateById::AppUser::haptics": {
+          params: {
+          'fk': '@fk'
+          },
+          url: urlBase + "/AppUsers/:id/haptics/:fk",
+          method: "PUT"
+        },
+
+        // INTERNAL. Use AppUser.haptics() instead.
+        "::get::AppUser::haptics": {
+          isArray: true,
+          url: urlBase + "/AppUsers/:id/haptics",
+          method: "GET"
+        },
+
+        // INTERNAL. Use AppUser.haptics.create() instead.
+        "::create::AppUser::haptics": {
+          url: urlBase + "/AppUsers/:id/haptics",
+          method: "POST"
+        },
+
+        // INTERNAL. Use AppUser.haptics.createMany() instead.
+        "::createMany::AppUser::haptics": {
+          isArray: true,
+          url: urlBase + "/AppUsers/:id/haptics",
+          method: "POST"
+        },
+
+        // INTERNAL. Use AppUser.haptics.destroyAll() instead.
+        "::delete::AppUser::haptics": {
+          url: urlBase + "/AppUsers/:id/haptics",
+          method: "DELETE"
+        },
+
+        // INTERNAL. Use AppUser.haptics.count() instead.
+        "::count::AppUser::haptics": {
+          url: urlBase + "/AppUsers/:id/haptics/count",
+          method: "GET"
+        },
+      }
+    );
+
+
+
+        /**
+         * @ngdoc method
+         * @name lbServices.Haptic#updateOrCreate
+         * @methodOf lbServices.Haptic
+         *
+         * @description
+         *
+         * Update an existing model instance or insert a new one into the data source.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *   This method does not accept any parameters.
+         *   Supply an empty object or omit this argument altogether.
+         *
+         * @param {Object} postData Request data.
+         *
+         * This method expects a subset of model properties as request parameters.
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * <em>
+         * (The remote method definition does not provide any description.
+         * This usually means the response is a `Haptic` object.)
+         * </em>
+         */
+        R["updateOrCreate"] = R["upsert"];
+
+        /**
+         * @ngdoc method
+         * @name lbServices.Haptic#update
+         * @methodOf lbServices.Haptic
+         *
+         * @description
+         *
+         * Update instances of the model matched by where from the data source.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `where` – `{object=}` - Criteria to match model instances
+         *
+         * @param {Object} postData Request data.
+         *
+         * This method expects a subset of model properties as request parameters.
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * The number of instances updated
+         */
+        R["update"] = R["updateAll"];
+
+        /**
+         * @ngdoc method
+         * @name lbServices.Haptic#destroyById
+         * @methodOf lbServices.Haptic
+         *
+         * @description
+         *
+         * Delete a model instance by id from the data source.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `id` – `{*}` - Model id
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * <em>
+         * (The remote method definition does not provide any description.
+         * This usually means the response is a `Haptic` object.)
+         * </em>
+         */
+        R["destroyById"] = R["deleteById"];
+
+        /**
+         * @ngdoc method
+         * @name lbServices.Haptic#removeById
+         * @methodOf lbServices.Haptic
+         *
+         * @description
+         *
+         * Delete a model instance by id from the data source.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `id` – `{*}` - Model id
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * <em>
+         * (The remote method definition does not provide any description.
+         * This usually means the response is a `Haptic` object.)
+         * </em>
+         */
+        R["removeById"] = R["deleteById"];
+
+
+    /**
+    * @ngdoc property
+    * @name lbServices.Haptic#modelName
+    * @propertyOf lbServices.Haptic
+    * @description
+    * The name of the model represented by this $resource,
+    * i.e. `Haptic`.
+    */
+    R.modelName = "Haptic";
+
+
+        /**
+         * @ngdoc method
+         * @name lbServices.Haptic#owner
+         * @methodOf lbServices.Haptic
+         *
+         * @description
+         *
+         * Fetches belongsTo relation owner.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `id` – `{*}` - PersistedModel id
+         *
+         *  - `refresh` – `{boolean=}` -
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * <em>
+         * (The remote method definition does not provide any description.
+         * This usually means the response is a `AppUser` object.)
+         * </em>
+         */
+        R.owner = function() {
+          var TargetResource = $injector.get("AppUser");
+          var action = TargetResource["::get::Haptic::owner"];
+          return action.apply(R, arguments);
+        };
 
     return R;
   }]);

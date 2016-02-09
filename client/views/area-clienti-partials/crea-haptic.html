@@ -3,75 +3,68 @@
 
 <!--<input id="ex1" data-slider-id='ex1Slider' type="text" data-slider-min="0" data-slider-max="20" data-slider-step="1" data-slider-value="14-->
 <div class="well">
-	<form name="form"  ng-submit="create()">
-	<div class="form-group">
+	<form name="form"  ng-submit="saveHaptic()">
+		<div class="form-group">
 			<label for="inputHapticName">Nome del pattern</label>
-			<input type="text" class="form-control" id="inputHapticName"
+			<input type="text" class="form-control" id="inputHapticName" ng-model="haptic.name"
 				   placeholder="Nuovo haptic..." maxlength="80" required autofocus>
 		</div>
-	<table class="table">
-		<caption>Aggiungi step al tuo pattern. = durata vibrazione, = intensitá vibrazione, = pausa</caption>
-		<thead>
-			<tr>
-				<th class="text-center">Durata (ms)</th>
-				<th class="text-center">Intensitá (0 &div; 1)</th>
-				<th class="text-center">Pausa (ms)</th>
-				<th class="text-center">Aggiungi Step</th>
-			</tr>
-		</thead>
+		<table class="table">
+			<caption>Aggiungi step al tuo pattern. = durata vibrazione, = intensitá vibrazione, = pausa</caption>
+			<thead>
+				<tr>
+					<th class="text-center">Durata (ms)</th>
+					<th class="text-center">Intensitá (0 &div; 1)</th>
+					<th class="text-center">Pausa (ms)</th>
+					<th class="text-center">Aggiungi/Reset</th>
+				</tr>
+			</thead>
 
 
-		<tbody>
-			<tr>
+			<tbody>
+				<tr>
+					<td class="text-center"><input type="text" id="haptic-slider-vibration-0" class="haptic-slider-vibration-0"
+												   /></td>
 
-				<td class="text-center"><input ng-model="slider.sliderValue" id="haptic-slider-vibration-0" class="haptic-slider-vibration-0"
-						   data-slider-id="haptic-slider-vibration-0"
-						   type="text"
-						   data-slider-min="0"
-						   data-slider-max="1000"
-						   data-slider-step="125"
-						   data-slider-value="0"
-						   data-slider-orientation="vertical"
-						   /></td>
+					<td class="text-center"><input type="text" id="haptic-slider-intensity-0" class="haptic-slider-intensity-0"
+												   /></td>
 
-				<td class="text-center"><input id="haptic-slider-intensity-0" class="haptic-slider-intensity-0"
-						   data-slider-id="haptic-slider-intensity-0"
-						   type="text"
-						   data-slider-min="0"
-						   data-slider-max="1"
-						   data-slider-step="0.125"
-						   data-slider-value="0"
-						   data-slider-orientation="vertical"
-						   /></td>
+					<td class="text-center"><input  type="text" id="haptic-slider-pause-0" class="haptic-slider-pause-0"
+													/></td>
 
-				<td class="text-center"><input id="haptic-slider-pause-0" class="haptic-slider-pause-0"
-						   data-slider-id="haptic-slider-pause-0"
-						   type="text"
-						   data-slider-min="0"
-						   data-slider-max="1000"
-						   data-slider-step="125"
-						   data-slider-value="0"
-						   data-slider-orientation="vertical"
-						   /></td>
+					<td class="text-center" style="vertical-align: middle;">
+						<a class="green" ng-click="addStep()"><i class="fa fa-plus-circle fa-3x pointer"></i></a>
+						<!--<a class="red" ng-click="addStep()"><i class="fa fa-minus-circle fa-3x"></i></a>-->
+						<a ng-click="resetStep()"><i class="fa fa-repeat fa-3x pointer"></i></a>
+					</td>
 
-				<td class="text-center" style="vertical-align: middle;">
-					<a ng-click="addStep()"><i class="fa fa-plus-circle fa-3x"></i></a>
-				</td>
+				</tr>
+			</tbody>
 
-			</tr>
-		</tbody>
+		</table>
 
-	</table>
+
+
+		<div class="well">
+			<h3>Preview del pattern</h3>
+			<canvas id="haptic-chart" class="chart chart-bar" chart-data="chart_data" chart-labels="chart_labels" chart-series="chart_series"></canvas>
+		</div>
+
+		<table class="table">
+			<thead>
+				<tr>
+					<th>Ripeti <span style="font-weight: lighter">(0 = no, n = n volte, -1 = infinito)</span></th>
+					<th class="text-right">Salva</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td><input type="text" id="haptic-slider-loop-0" class="haptic-slider-loop-0"
+							   /></td>
+					<td class="text-right"><button type="submit" class="btn btn-primary"><i class="fa fa-floppy-o fa-3x pointer"></i></button></td>
+				</tr>
+			</tbody>
+		</table>
 	</form>
-
-
-	<div class="well">
-		<canvas id="bar" class="chart chart-bar"
-				chart-data="data" chart-labels="labels"> chart-series="series"
-		</canvas>
-	</div>
-
-
-
 </div>
 <!--<span id="create-haptic-slider-slider-0-value">Durata Vibrazione: <span id="slider-0-value">0</span> ms</span>-->
