@@ -1,6 +1,6 @@
 module.exports = function(AppUser) {
 
-
+	// GET ALL FILES OF THIS USER
 	AppUser.files = function( id, cb ){
 		AppUser.findById( id, function(error, instance){
 			var response = instance.folder;
@@ -23,6 +23,34 @@ module.exports = function(AppUser) {
 			returns : { arg: 'data', type : 'string'}
 		}
 	);
+
+	// GET ALL RESOURCE TO SHOW IN UNITY
+	/*AppUser.guidata = function( id, cb ){
+		// Read user info
+		AppUser.findById( id, function(error, instance){
+			var baseUrl = "https://"
+
+
+			var response = instance.folder;
+
+			var ds = AppUser.app.dataSources.storage;
+			var container = ds.createModel('container');
+			container.getFiles(instance.folder, null, function(error, data){
+				var response = data;
+				cb(null, response);
+			});
+		});
+	};
+
+	AppUser.remoteMethod(
+		'guidata',
+		{
+			description : 'Queries resource to build the museum with in unity',
+			accepts :[ { arg: 'id', description: 'Model (AppUser) id', type: 'string', required : true}],
+			http : { path : '/:id/guidata', verb : 'get'},
+			returns : { arg: 'data', type : 'string'}
+		}
+	);*/
 
 	/* OPERATION HOOKS */
 	// AFTER SAVE
@@ -81,6 +109,8 @@ module.exports = function(AppUser) {
 
 				var ds = ctx.Model.app.dataSources.storage;
 				var container = ds.createModel('container');
+
+				// TODO : Also delete every museum, museumlayout of this user
 
 				console.log('Container that will be deleted ' + model.folder);
 

@@ -10,7 +10,7 @@
 				   placeholder="Nuovo haptic..." maxlength="80" required autofocus>
 		</div>
 		<table class="table">
-			<caption>Aggiungi step al tuo pattern. = durata vibrazione, = intensitá vibrazione, = pausa</caption>
+			<caption>Aggiungi uno step di vibrazione al tuo haptic. = durata vibrazione, = intensitá vibrazione, = pausa prima dello step successivo </caption>
 			<thead>
 				<tr>
 					<th class="text-center">Durata (ms)</th>
@@ -35,7 +35,7 @@
 					<td class="text-center" style="vertical-align: middle;">
 						<a class="green" ng-click="addStep()"><i class="fa fa-plus-circle fa-3x pointer"></i></a>
 						<!--<a class="red" ng-click="addStep()"><i class="fa fa-minus-circle fa-3x"></i></a>-->
-						<a ng-click="resetStep()"><i class="fa fa-repeat fa-3x pointer"></i></a>
+						<a ng-click="resetStep()"><i class="fa fa-trash-o fa-3x pointer"></i></a>
 					</td>
 
 				</tr>
