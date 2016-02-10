@@ -67,7 +67,7 @@ module.exports = function(AppUser) {
 							imgTbnImg : imgTbnImg,
 							imgPicture : imgPicture,
 							OBJ_URL : "",
-							OBJ_name : ""
+							OBJ_Name : ""
 
 						});
 						}
@@ -86,7 +86,7 @@ module.exports = function(AppUser) {
 							imgTbnImg : encodeURI(element.name),
 							imgPicture : "",
 							OBJ_URL : "",
-							OBJ_name : objName
+							OBJ_Name : objName
 						});
 						}
 						else
