@@ -1,3 +1,5 @@
+var path = require('path');
+
 module.exports = function(AppUser) {
 
 	// GET ALL FILES OF THIS USER
@@ -25,21 +27,85 @@ module.exports = function(AppUser) {
 	);
 
 	// GET ALL RESOURCE TO SHOW IN UNITY
-	/*AppUser.guidata = function( id, cb ){
+	AppUser.guidata = function( id, cb ){
 		// Read user info
 		AppUser.findById( id, function(error, instance){
-			var baseUrl = "https://"
+			var baseUrl = "https://vrseum-backend.herokuapp.com/api/containers/" +
+				instance.folder +
+				"/download/";
+
+			var response = {
+				name : "Resources for user with id " + id,
+				BaseUrl : baseUrl,
+				listAssets : [],
+				listHaptics : []
+			};
+
+				AppUser.files( id, function(error, data){
+
+					// Add to response the assets list
+					_.each(data, function(element, index, list){
+
+						// check file extension and type
+						var fileName = path.parse(element.name).name;
+						var fileExtension = path.parse(element.name).ext;
+
+						if( fileExtension === ".png" ||
+							fileExtension === ".jpg" ||
+							fileExtension === ".jpeg" )
+						{
+							var imgTbnImg = encodeURI(element.name);
+							var imgPicture = encodeURI(element.name);
+							var objUrl = "";
+							var objName = "";
 
 
-			var response = instance.folder;
+							response.listAssets.push({
+							ID_obj : "obj_" + index,
+							Name : fileName,
+							Description : fileName,
+							imgTbnImg : imgTbnImg,
+							imgPicture : imgPicture,
+							OBJ_URL : "",
+							OBJ_name : ""
 
-			var ds = AppUser.app.dataSources.storage;
-			var container = ds.createModel('container');
-			container.getFiles(instance.folder, null, function(error, data){
-				var response = data;
-				cb(null, response);
+						});
+						}
+						else if ( fileExtension === ".obj")
+						{
+							var imgTbnImg = encodeURI(element.name);
+							var imgPicture = fileName + ".jpg";
+							var objUrl = "";
+							var objName = element.name;
+
+
+							response.listAssets.push({
+							ID_obj : "obj_" + index,
+							Name : fileName,
+							Description : fileName,
+							imgTbnImg : encodeURI(element.name),
+							imgPicture : "",
+							OBJ_URL : "",
+							OBJ_name : objName
+						});
+						}
+						else
+						{
+							// do not process file
+						}
+					}); // ...end of _.each
+
+
+
+						instance.haptics(null , function(error, haptics ){
+
+							response.listHaptics = haptics;
+							cb(null, response);
+						});
+
+				});
+
 			});
-		});
 	};
 
 	AppUser.remoteMethod(
@@ -48,9 +114,9 @@ module.exports = function(AppUser) {
 			description : 'Queries resource to build the museum with in unity',
 			accepts :[ { arg: 'id', description: 'Model (AppUser) id', type: 'string', required : true}],
 			http : { path : '/:id/guidata', verb : 'get'},
-			returns : { arg: 'data', type : 'string'}
+			returns : { type : 'object' , root: true}
 		}
-	);*/
+	);
 
 	/* OPERATION HOOKS */
 	// AFTER SAVE

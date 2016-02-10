@@ -97,7 +97,7 @@ angular
 			};
 
 			$scope.delete = function (index, id) {
-				$http.delete('/api/containers/' + $scope.currentUser.folder + '/files' + encodeURIComponent(id)).success(function (data, status, headers) {
+				$http.delete('/api/containers/' + $scope.currentUser.folder + '/files/' + encodeURIComponent(id)).success(function (data, status, headers) {
 					$scope.files.splice(index, 1);
 				});
 			};

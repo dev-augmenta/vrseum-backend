@@ -36,6 +36,7 @@ module.exports = function (File) {
 					if (err !== null) {
 						cb(err);
 					} else {
+						console.log("file obj creato " + JSON.stringify(obj));
 						cb(null, obj);
 					}
 				});
