@@ -1,5 +1,23 @@
-<h2>Carica Opera</h2>
 
+
+
+<div ng-click="toggleInfo()" class="well comfy pointer" >
+	<i  style="margin-top: 5px;" class="fa fa-info-circle fa-lg fa-pull-right blue "></i>
+	<div ng-hide="!hideInfo">
+		<span><i>"Come caricare le opere..."</i></span>
+	</div>
+	<div ng-hide="hideInfo">
+		<h3>Come caricare le opere</h3>
+		<strong>Immagini:</strong>
+		<p>Si possono caricare immagini in formato <code>.jpg</code> o <code>.png</code>(max 1024KB)</p>
+		<strong>Modelli 3D:</strong>
+		<p>Si possono caricare file in formato <code>.obj</code> (max 1024KB). Si deve inoltre caricare il file <code>.mtl</code> con relative texture in formato <code>.jpg</code> o <code>.png</code></p>
+		<strong>Thumbnails:</strong>
+		<p>Per i modelli 3D &egrave; possibile creare una thumbnail caricando un file <code>.jpg</code> con lo stesso nome del file <code>.obj</code></p>
+	</div>
+
+</div>
+<hr>
 <h3>Scegli File Da Caricare</h3>
 <input nv-file-select uploader="uploader" options="{{currentUser}}" type="file" multiple/><br/>
 

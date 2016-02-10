@@ -1,0 +1,30 @@
+<div class="bd-box">
+	<h2 class="form-edit-museum-heading">Modifica il museo</h2>
+	<form name="form"  ng-submit="submitForm()">
+		<div class="form-group">
+			<label for="inputMuseumName">Nome</label>
+			<input type="text" class="form-control" id="inputMuseumName"
+				   ng-model="museum.name" placeholder="" maxlength="80" required autofocus>
+		</div>
+		<div class="form-group">
+			<label for="inputMuseumDescription">Descrizione</label>
+			<textarea class="form-control" id="inputMuseumDescription"
+					  ng-model="museum.description" rows="5" maxlength="500"
+					  placeholder="" required autofocus></textarea>
+		</div>
+		<!--<div class="form-group">
+			<label for="inputMuseumThumb">Thumbnail</label>
+			<input type="text" class="form-control" id="inputMuseumThumb"
+				   ng-model="museum.thumbnail" placeholder="img/museums/thumbs/default.png" maxlength="80" required autofocus>
+		</div>-->
+		<div class="form-group">
+			<div class="checkbox">
+			<label>
+				<input type="checkbox" ng-model="museum.isOpen"> Aperto al pubblico
+			</label>
+		</div>
+		</div>
+
+		<button type="submit" class="btn btn-default">Salva</button>
+	</form>
+</div>

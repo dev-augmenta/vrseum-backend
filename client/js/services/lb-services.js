@@ -1528,6 +1528,39 @@ module.factory(
           method: "GET"
         },
 
+        /**
+         * @ngdoc method
+         * @name lbServices.AppUser#guidata
+         * @methodOf lbServices.AppUser
+         *
+         * @description
+         *
+         * Queries resource to build the museum with in unity
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `id` – `{string}` - Model (AppUser) id
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * <em>
+         * (The remote method definition does not provide any description.
+         * This usually means the response is a `AppUser` object.)
+         * </em>
+         */
+        "guidata": {
+          url: urlBase + "/AppUsers/:id/guidata",
+          method: "GET"
+        },
+
         // INTERNAL. Use CoffeeShop.reviewers.findById() instead.
         "::findById::CoffeeShop::reviewers": {
           params: {

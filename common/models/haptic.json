@@ -41,7 +41,7 @@
     }
   },
   "acls": [
-	  {
+    {
       "principalType": "ROLE",
       "principalId": "$everyone",
       "permission": "DENY"
@@ -76,7 +76,6 @@
       "principalId": "$authenticated",
       "permission": "ALLOW",
       "property": "__get__owner"
-	  
     }
   ],
   "methods": {}

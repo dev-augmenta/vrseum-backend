@@ -7,7 +7,9 @@ angular
 		'anim-in-out',
 		'angular.filter',
 		'angularFileUpload',
-		'chart.js'
+		'chart.js',
+		'customFilters',
+		'ngSanitize'
 
 	])
 	.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider,
@@ -37,6 +39,15 @@ angular
 						displayName: 'Crea Museo'
 					},
 					controller: 'AddMuseumController',
+					authenticate: true
+				})
+				.state('area-clienti.modifica-museo', {
+					url: '/modifica-museo/:id',
+					templateUrl: 'views/area-clienti-partials/modifica-museo.html',
+					data : {
+						displayName: 'Modifica Museo'
+					},
+					controller: 'EditMuseumController',
 					authenticate: true
 				})
 				.state('area-clienti.musei', {
@@ -83,14 +94,14 @@ angular
 					controller: 'HapticController',
 					authenticate: true
 				})
-				.state('area-clienti.scarica-haptic', {
+				/*.state('area-clienti.scarica-haptic', {
 					url: '/scarica-haptic',
 					templateUrl: 'views/area-clienti-partials/scarica-haptic.html',
 					data : {
 						displayName: 'Scarica Haptic'
 					},
 					authenticate: true
-				})
+				})*/
 				.state('area-clienti.editor-vr', {
 					url: '/editor-vr',
 					templateUrl: 'views/area-clienti-partials/editor-vr.html',

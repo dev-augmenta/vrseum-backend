@@ -124,7 +124,7 @@
       "permission": "ALLOW",
       "property": "__get__museums"
     },
-	{
+    {
       "principalType": "ROLE",
       "principalId": "$everyone",
       "permission": "ALLOW",
@@ -142,7 +142,7 @@
       "permission": "ALLOW",
       "property": "files"
     },
-	{
+    {
       "principalType": "ROLE",
       "principalId": "admin",
       "permission": "ALLOW",

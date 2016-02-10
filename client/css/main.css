@@ -429,11 +429,30 @@ ul
 	color : #4cae4c;
 }
 
+.blue
+{
+	color: #428bca;
+}
+
+.blue:hover
+{
+	color: #337ab7;
+}
+
 .pointer{
 	cursor: pointer;
 }
 
+.well.comfy{
+	min-height: 50px;
+}
 
+
+.thumb
+{
+	height: 100px;
+	width: auto;
+}
 
 
 

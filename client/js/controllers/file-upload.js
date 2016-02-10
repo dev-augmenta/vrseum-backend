@@ -4,34 +4,26 @@ angular
 	.controller('FilesUploaderController', ['$scope', '$rootScope', 'FileUploader',
 		function ($scope, $rootScope, FileUploader) {
 
+
+
+			$scope.toggleInfo = function(){
+				$scope.hideInfo = !$scope.hideInfo;
+			};
+
 			var uploader = $scope.uploader = new FileUploader({
 				scope: $scope, // to automatically update the html. Default: $rootScope
 				//url: '/api/containers/'+$scope.currentUser.folder+'/upload',
 				url: '/api/files/upload?options=' + $scope.currentUser.folder,
 				//url: '/api/files/upload',
-				removeAfterUpload: true,
-				data: {
-					elPerro: 'laFormica'
-				}
-
-
+				removeAfterUpload: true
 			});
 
 			// ADDING FILTERS
-			/*uploader.filters.push({
-			 name: 'filterName',
-			 fn: function (item, options) { // second user filter
-			 console.info('filter2');
-			 return true;
-			 }
-			 });*/
-
-
 			uploader.filters.push({
 				name: 'imageFilter',
 				fn: function (item /*{File|FileLikeObject}*/, options) {
 					var type = '|' + item.type.slice(item.type.lastIndexOf('/') + 1) + '|';
-					return '|jpg|png|jpeg|bmp|gif|'.indexOf(type) !== -1;
+					return '|jpg|png|jpeg|bmp|gif|obj|mtl|'.indexOf(type) !== -1;
 				}
 			});
 

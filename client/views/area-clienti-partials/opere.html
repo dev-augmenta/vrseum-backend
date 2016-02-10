@@ -9,6 +9,11 @@
 		<tbody>
 			<tr ng-repeat="file in files">
 				<td>
+					<a href="/api/containers/{{file.container}}/download/{{file.name}}">
+						<img ng-src="/api/containers/{{file.container}}/download/{{file.name}}" class="thumb thumbnail"/>
+					</a>
+				</td>
+				<td>
 					<a href="/api/containers/{{file.container}}/download/{{file.name}}"><strong>{{
 						file.name}}</strong></a></td>
 				<td>
