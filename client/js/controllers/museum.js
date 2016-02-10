@@ -18,7 +18,8 @@ angular
 
 						name: $scope.museum.name,
 						description: $scope.museum.description,
-						thumbnail : $scope.museum.thumbnail,
+						//thumbnail : $scope.museum.thumbnail,
+						thumbnail : 'img/museums/thumbs/museo-00.png',
 						isOpen:$scope.museum.isOpen,
 						ownerId : $rootScope.currentUser.id
 				})
