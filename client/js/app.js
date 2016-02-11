@@ -82,6 +82,15 @@ angular
 					controller : 'FilesUploaderController',
 					authenticate: true
 				})
+				.state('area-clienti.modifica-opera', {
+					url: '/modifica-opera/:id',
+					templateUrl: 'views/area-clienti-partials/modifica-opera.html',
+					data : {
+						displayName: 'Modifica Opera'
+					},
+					controller : 'EditArtWorkController',
+					authenticate: true
+				})
 				.state('area-clienti.haptic', {
 					url: '/haptic',
 					templateUrl: 'views/area-clienti-partials/haptic.html',

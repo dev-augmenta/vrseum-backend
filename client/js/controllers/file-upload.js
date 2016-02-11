@@ -79,16 +79,30 @@ angular
 			};
 			// --------------------
 		}])
-	.controller('FilesController', ['$scope', '$http', function ($scope, $http) {
+	.controller('FilesController', ['$scope', '$rootScope', '$http', 'File', function ($scope, $rootScope, $http, File) {
 
 			$scope.load = function () {
-				$http.get('/api/containers/' + $scope.currentUser.folder + '/files').success(function (data) {
+				/*$http.get('/api/containers/' + $scope.currentUser.folder + '/files').success(function (data) {
+					 //console.log(data);
+				$scope.files = data;
+				});*/
+				var filter = {
+					where : { container : $rootScope.currentUser.folder },
+					order : 'name ASC'
+				};
+				File.find( { filter : filter} )
+					.$promise
+					.then(function(data){
+						$scope.files = data;
+				});
+				/*$http.get('/api/files?filter=%7B%20%22where%22%20%3A%20%7B%20%22container%22%20%3A%20%22' + $scope.currentUser.folder + '%22%7D%20%7D').success(function (data) {
 					// console.log(data);
 					$scope.files = data;
-				});
+				});*/
 			};
 
 			$scope.delete = function (index, id) {
+				//TODO change to File.deleteById
 				$http.delete('/api/containers/' + $scope.currentUser.folder + '/files/' + encodeURIComponent(id)).success(function (data, status, headers) {
 					$scope.files.splice(index, 1);
 				});

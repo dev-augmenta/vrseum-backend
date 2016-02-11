@@ -3,22 +3,6 @@ module.exports = function (File) {
 
 	File.upload = function (ctx, options, cb) {
 
-
-		/*var cache = [];
-		console.log('form ' + JSON.stringify(options, function (key, value) {
-			if (typeof value === 'object' && value !== null) {
-				if (cache.indexOf(value) !== -1) {
-					// Circular reference found, discard key
-					return;
-				}
-				// Store value in our collection
-				cache.push(value);
-			}
-			return value;
-		}));
-		cache = null; // Enable garbage collection*/
-
-
 		//ctx.req.params.container = options;
 		if(!options) options = {};
 		ctx.req.params.container = options;
@@ -29,6 +13,7 @@ module.exports = function (File) {
 				var fileInfo = fileObj.files.file[0];
 				File.create({
 					name: fileInfo.name,
+					description : fileInfo.name,
 					type: fileInfo.type,
 					container: fileInfo.container,
 					url: CONTAINERS_URL + fileInfo.container + '/download/' + fileInfo.name

@@ -9,16 +9,27 @@
 		<tbody>
 			<tr ng-repeat="file in files">
 				<td>
-					<a href="/api/containers/{{file.container}}/download/{{file.name}}">
-						<img ng-src="/api/containers/{{file.container}}/download/{{file.name}}" class="thumb thumbnail"/>
+					<a href="{{file.url}}">
+						<img ng-src="{{file.url}}" class="thumb thumbnail"/>
 					</a>
 				</td>
 				<td>
-					<a href="/api/containers/{{file.container}}/download/{{file.name}}"><strong>{{
-						file.name}}</strong></a></td>
+					<a href="{{file.url}}"><strong>{{
+									file.name}}</strong></a>
+				</td>
 				<td>
 				<td>
-					<button type="button" class="btn btn-danger btn-xs"
+					{{file.description}}
+				</td>
+				<td>
+				<td>
+					<button type="button" class="btn btn-default btn-xs btn-table"
+						ui-sref="area-clienti.modifica-opera({ id: file.id })"
+						title="Modifica Opera">
+					<span class="glyphicon glyphicon-edit"></span>
+					Modifica
+				</button>
+					<button type="button" class="btn btn-default btn-xs btn-table"
 							ng-click="delete($index, file.name)"
 							title="Cancella il file">
 						<span class="glyphicon glyphicon-trash"></span>
