@@ -39,6 +39,32 @@ module.exports = function(Museum) {
 	});
 
 
+	Museum.observe('before delete', function deleteMuseumLayout(ctx, next){
+
+		console.log('About to delete museum with id: ' + ctx.where.id);
+
+		Museum.findById(ctx.where.id, function(err, model) {
+
+			model.layout.destroy(function(error){
+				if( !error )
+					{
+						console.log('Layout for museum with id: '+ model.id + ' deleted');
+					}
+					else
+					{
+						console.log(error);
+					}
+					next();
+			});
+
+
+
+		});
+
+
+	});
+
+
 
 };
 

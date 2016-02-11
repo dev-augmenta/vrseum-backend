@@ -50,6 +50,12 @@ angular
 					controller: 'EditMuseumController',
 					authenticate: true
 				})
+				.state('area-clienti.elimina-museo', {
+					url: '/elimina-museo/:id',
+					controller: 'DeleteMuseumController',
+					templateUrl : 'views/area-clienti-partials/elimina-museo.html',
+					authenticate: true
+				})
 				.state('area-clienti.musei', {
 					url: '/musei',
 					templateUrl: 'views/area-clienti-partials/musei.html',

@@ -454,7 +454,15 @@ ul
 	width: auto;
 }
 
+.btn-table{
+	min-width: 75px;
+}
 
+.my-drop-zone { border: dotted 3px lightgray; }
+.my-drop-zone.error { border: dotted 3px #c9302c; }
+.nv-file-over { border: dotted 3px #428bca; } /* Default class applied to drop zones on over */
+.my-drop-zone.nv-file-over.error { border: dotted 3px #428bca; } /* Default class applied to drop zones on over */
+.another-file-over-class { border: dotted 3px green; }
 
 /* -------- */
 

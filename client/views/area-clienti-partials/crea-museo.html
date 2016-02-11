@@ -12,19 +12,35 @@
 					  ng-model="museum.description" rows="5" maxlength="500"
 					  placeholder="Descrizione...(max 500 caratteri)" required autofocus></textarea>
 		</div>
-		<!--<div class="form-group">
-			<label for="inputMuseumThumb">Thumbnail</label>
-			<input type="text" class="form-control" id="inputMuseumThumb"
-				   ng-model="museum.thumbnail" placeholder="img/museums/thumbs/default.png" maxlength="80" required autofocus>
-		</div>-->
+		<div class="form-group">
+			<label  for="inputMuseumThumb">Thumbnail</label>
+			<!--<input type="file" nv-file-select="" uploader="uploader" filters="queueLimit" /><br/>-->
+			<div id="thumbFileDropper" ng-show="!uploader.queue.length" class="well my-drop-zone" nv-file-drop="" nv-file-over="" uploader="uploader" >
+				Trascina qui una immagine o <span style="margin-left: 5px; display: inline-block;"> <input type="file" nv-file-select="" uploader="uploader" filters="queueLimit" /></span>
+            </div>
+			<div class="input-group" ng-show="uploader.queue.length">
+				<input type="text" class="form-control" id="inputMuseumThumb"
+					   ng-model="museum.thumbnail" placeholder="..." maxlength="80" >
+				<span class="input-group-btn"><button type="button" class="btn btn-danger pull-right"
+													  ng-click="uploader.clearQueue()">
+						<span class="glyphicon glyphicon-trash"></span> Cambia
+					</button>
+
+				</span>
+			</div>
+		</div>
 		<div class="form-group">
 			<div class="checkbox">
-			<label>
-				<input type="checkbox" ng-model="museum.isOpen"> Aperto al pubblico
-			</label>
+				<label>
+					<input type="checkbox" ng-model="museum.isOpen"> Aperto al pubblico
+				</label>
+			</div>
 		</div>
-		</div>
-
 		<button type="submit" class="btn btn-default">Crea</button>
+		<br>
+		<div class="progress" style="">
+			<div class="progress-bar" role="progressbar"
+				 ng-style="{ 'width': uploader.progress + '%' }"></div>
+		</div>
 	</form>
 </div>

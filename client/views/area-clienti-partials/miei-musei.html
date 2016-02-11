@@ -14,11 +14,17 @@
 			<td>{{museum.name}}</td>
 			<td>{{museum.description}}</td>
 			<td ng-bind-html="museum.isOpen | boolconverter"></td>
-			<td><button type="button" class="btn btn-default btn-xs"
+			<td><button type="button" class="btn btn-default btn-xs btn-table"
 						ui-sref="area-clienti.modifica-museo({ id: museum.id })"
 						title="Modifica Museo">
 					<span class="glyphicon glyphicon-edit"></span>
 					Modifica
+				</button>
+				<button type="button" class="btn btn-default btn-xs btn-table"
+						ui-sref="area-clienti.elimina-museo({ id: museum.id })"
+						title="Elimina Museo">
+					<span class="glyphicon glyphicon-trash"></span>
+					Elimina
 				</button>
 			</td>
 		</tr>
