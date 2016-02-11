@@ -19,13 +19,13 @@ angular
 			});
 
 			// ADDING FILTERS
-			uploader.filters.push({
+			/*uploader.filters.push({
 				name: 'imageFilter',
-				fn: function (item /*{File|FileLikeObject}*/, options) {
+				fn: function (item, options) {
 					var type = '|' + item.type.slice(item.type.lastIndexOf('/') + 1) + '|';
 					return '|jpg|png|jpeg|bmp|gif|obj|mtl|'.indexOf(type) !== -1;
 				}
-			});
+			});*/
 
 			// REGISTER HANDLERS
 			// --------------------
