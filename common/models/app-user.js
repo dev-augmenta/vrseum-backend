@@ -69,7 +69,7 @@ module.exports = function(AppUser) {
 							OBJ_URL : "",
 							OBJ_Name : ""
 
-						});
+							});
 						}
 						else if ( fileExtension === ".obj")
 						{
@@ -83,7 +83,7 @@ module.exports = function(AppUser) {
 							ID_obj : "obj_" + index,
 							Name : fileName,
 							Description : fileName,
-							imgTbnImg : encodeURI(element.name),
+							imgTbnImg : fileName + '.jpg',
 							imgPicture : "",
 							OBJ_URL : "",
 							OBJ_Name : objName
