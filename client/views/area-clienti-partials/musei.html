@@ -21,10 +21,10 @@
 
 <div class="row" ng-repeat="museumsRow in museums | chunkBy : 3">
 	<div class="col-md-4 portfolio-item" ng-repeat="museum in museumsRow">
-		<a href="#">
+		<a href="unity/viewer/VRSeum_Viewer/index.html" target="_blank">
 			<img class="img-responsive" ng-src="{{museum.thumbnail}}" alt>
 		</a>
-		<h3><a href="#">{{museum.name}}</a></h3>
+		<h3><a href="unity/viewer/VRSeum_Viewer/index.html" target="_blank">{{museum.name}}</a></h3>
 		<p>{{museum.description}}</p>
 	</div>
 </div>
