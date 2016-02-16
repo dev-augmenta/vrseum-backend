@@ -101,11 +101,17 @@ angular
 				});*/
 			};
 
-			$scope.delete = function (index, id) {
-				//TODO change to File.deleteById
-				$http.delete('/api/containers/' + $scope.currentUser.folder + '/files/' + encodeURIComponent(id)).success(function (data, status, headers) {
-					$scope.files.splice(index, 1);
+			$scope.delete = function (index, id, name) {
+				// Delete the file in database and then the file on amazon through container
+
+				File.deleteById({ id :  id})
+					.$promise
+					.then(function(res){
+						$http.delete('/api/containers/' + $scope.currentUser.folder + '/files/' + encodeURIComponent(name)).success(function (data, status, headers) {
+							$scope.files.splice(index, 1);
+					});
 				});
+
 			};
 
 			$scope.$on('uploadCompleted', function (event) {
