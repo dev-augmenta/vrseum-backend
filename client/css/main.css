@@ -61,6 +61,10 @@ label {
 	border: 0;
 }
 
+.navbar-brand {
+	text-transform: uppercase;
+}
+
 
 /* DASHBOARD */
 /*
@@ -122,6 +126,13 @@ label {
 
 .container .text-muted {
 	margin: 20px 0;
+	text-align: center;
+}
+
+.text-muted {
+	text-transform: lowercase;
+	font-size: 10px;
+	color: #DEDEDE;
 }
 
 /*
