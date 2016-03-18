@@ -30,7 +30,7 @@ module.exports = function(AppUser) {
 	AppUser.guidata = function( id, cb ){
 		// Read user info
 		AppUser.findById( id, function(error, instance){
-			var baseUrl = "https://vrseum-backend.herokuapp.com/api/containers/" +
+			var baseUrl = "http://localhost:3000/api/containers/" +
 				instance.folder +
 				"/download/";
 
