@@ -3,7 +3,7 @@ angular
 	.controller('EditArtWorkController', ['$scope', '$rootScope', '$q', '$state', '$stateParams', 'File',
 		function($scope, $rootScope, $q, $state, $stateParams, File){
 
-			$scope.artWork = {};
+			$scope.artwork = {};
 
 			var filter = {
 				where : {id : $stateParams.id}
@@ -12,11 +12,16 @@ angular
 			File.find({filter : filter})
 			.$promise
 				.then(function(data){
-					console.log(data);
-					$scope.artWork = data[0];
+					console.log(data[0]);
+					$scope.artwork = data[0];
 			});
 
-			//File.findById({ id : $stateParams.id})
+			/*File.findById({ id : $stateParams.id})
+			.$promise
+				.then(function(data){
+					console.log(data);
+					$scope.artwork = data[0];
+			});*/
 
 
 			/*$q.all([
@@ -30,11 +35,15 @@ angular
 
 			$scope.submitForm = function()
 			{
-				$scope.artWork
-					.$save()
-					.then(function(artWork){
-						$state.go('area-clienti.opere');
-				});
+				$scope.artwork
+					.$save(
+					function(){ // on success
+						$state.go('area-clienti.opere');},
+					function(){ // on error
+						$state.go('area-clienti.opere');}
+
+
+				);
 			};
 
 	}]);
