@@ -2,7 +2,7 @@
   "name": "vrseum-backend",
   "version": "1.0.0",
   "dependencies": {
-    "angular": "^1.5.0",
+    "angular": "^1.5.2",
     "angular-resource": "^1.4.9",
     "angular-ui-router": "^0.2.17",
     "bootstrap": "^3.3.6",
@@ -21,6 +21,6 @@
   "ignore": {},
   "devDependencies": {},
   "resolutions": {
-    "angular": "1.5.1"
+    "angular": "1.5.2"
   }
 }
