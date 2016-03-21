@@ -1,41 +1,43 @@
 {
-  "db": {
-    "name": "db",
-    "connector": "memory",
-    "file": "data/db.json"
-  },
-  "mongolab": {
-    "host": "ds049925.mongolab.com",
-    "port": 49925,
-    "database": "heroku_f04xz8tc",
-    "username": "vrseum_admin",
-    "password": "PieroAugmenta15",
-    "name": "mongolab",
-    "connector": "mongodb",
-    "server": {
-      "auto_reconnect": true,
-      "reconnectTries": 100,
-      "reconnectInterval": 1000
-    }
-  },
-  "mongolab-local": {
-    "host": "localhost",
-    "port": 27017,
-    "database": "heroku_f04xz8tc",
-    "username": "vrseum_admin",
-    "password": "PieroAugmenta15",
-    "name": "mongolab-local",
-    "connector": "mongodb",
-    "server": {
-      "auto_reconnect": true,
-      "reconnectTries": 100,
-      "reconnectInterval": 1000
-    }
-  },
-  "storage": {
-    "name": "storage",
-    "connector": "loopback-component-storage",
-    "provider": "filesystem",
-    "root" : "data/storage"
-  }
+	"db": {
+		"name": "db",
+		"connector": "memory",
+		"file": "data/db.json"
+	},
+	"mongolab": {
+		"host": "ds049925.mongolab.com",
+		"port": 49925,
+		"database": "heroku_f04xz8tc",
+		"username": "vrseum_admin",
+		"password": "PieroAugmenta15",
+		"name": "mongolab",
+		"connector": "mongodb",
+		"server": {
+			"auto_reconnect": true,
+			"reconnectTries": 100,
+			"reconnectInterval": 1000
+		}
+	},
+	"mongolab-local": {
+		"host": "localhost",
+		"port": 27017,
+		"database": "heroku_f04xz8tc",
+		"username": "vrseum_admin",
+		"password": "PieroAugmenta15",
+		"name": "mongolab-local",
+		"connector": "mongodb",
+		"server": {
+			"auto_reconnect": true,
+			"reconnectTries": 100,
+			"reconnectInterval": 1000
+		}
+	},
+	"storage": {
+		"name": "storage",
+		"connector": "loopback-component-storage",
+		"provider": "amazon",
+		"region": "eu-central-1",
+		"key": "bjijxfFMR2ue7KlgsgVveUAyc2YaBnhmuW4+rQSG",
+		"keyId": "AKIAJWIFE6NBOUEKJRZQ"
+	}
 }
