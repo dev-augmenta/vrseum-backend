@@ -1,4 +1,5 @@
 var path = require('path');
+var _ = require('underscore');
 
 module.exports = function(AppUser) {
 
@@ -31,6 +32,7 @@ module.exports = function(AppUser) {
 		// Read user info
 		AppUser.findById( id, function(error, instance){
 			var baseUrl = "https://vrseum-backend.herokuapp.com/api/containers/" +
+
 				instance.folder +
 				"/download/";
 
