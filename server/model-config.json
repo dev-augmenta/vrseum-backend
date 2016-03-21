@@ -15,51 +15,51 @@
     ]
   },
   "AppUser": {
-    "dataSource": "mongolab",
+    "dataSource": "mongolab-local",
     "public": true
   },
   "accessToken": {
-    "dataSource": "mongolab",
+    "dataSource": "mongolab-local",
     "public": false
   },
   "userCredential": {
-    "dataSource": "mongolab",
+    "dataSource": "mongolab-local",
     "public": false
   },
   "userIdentity": {
-    "dataSource": "mongolab",
+    "dataSource": "mongolab-local",
     "public": false
   },
   "ACL": {
-    "dataSource": "mongolab",
+    "dataSource": "mongolab-local",
     "public": false
   },
   "RoleMapping": {
-    "dataSource": "mongolab",
+    "dataSource": "mongolab-local",
     "public": false
   },
   "Role": {
-    "dataSource": "mongolab",
+    "dataSource": "mongolab-local",
     "public": false
   },
   "CoffeeShop": {
-    "dataSource": "mongolab",
+    "dataSource": "mongolab-local",
     "public": true
   },
   "Review": {
-    "dataSource": "mongolab",
+    "dataSource": "mongolab-local",
     "public": true
   },
   "Museum": {
-    "dataSource": "mongolab",
+    "dataSource": "mongolab-local",
     "public": true
   },
   "MuseumLayout": {
-    "dataSource": "mongolab",
+    "dataSource": "mongolab-local",
     "public": true
   },
   "file": {
-    "dataSource": "mongolab",
+    "dataSource": "mongolab-local",
     "public": true
   },
   "container": {
@@ -67,7 +67,7 @@
     "public": true
   },
   "Haptic": {
-    "dataSource": "mongolab",
+    "dataSource": "mongolab-local",
     "public": true
   }
 }

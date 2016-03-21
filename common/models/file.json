@@ -1,27 +1,27 @@
 {
-  "name": "file",
-  "base": "PersistedModel",
-  "idInjection": true,
-  "options": {
-    "validateUpsert": true
-  },
-  "properties": {
-    "name": {
-      "type": "string"
-    },
-    "type": {
-      "type": "string"
-    },
-    "url": {
-      "type": "string",
-      "required": true
-    },
-    "description": {
-      "type": "string"
-    }
-  },
-  "validations": [],
-  "relations": {},
-  "acls": [],
-  "methods": {}
+	"name": "file",
+	"base": "PersistedModel",
+	"idInjection": true,
+	"options": {
+		"validateUpsert": true
+	},
+	"properties": {
+		"name": {
+			"type": "string"
+		},
+		"type": {
+			"type": "string"
+		},
+		"url": {
+			"type": "string",
+			"required": true
+		},
+		"description": {
+			"type": "string"
+		}
+	},
+	"validations": [],
+	"relations": {},
+	"acls": [],
+	"methods": {}
 }
