@@ -101,13 +101,13 @@ angular
 				});*/
 			};
 
-			$scope.delete = function (index, id, name) {
-				// Delete the file in database and then the file on amazon through container
-
+			$scope.delete = function (index, id, url) {
+				// Delete the file in database and then the file on amazon/file system through container
+				var filename = url.split("/").pop();
 				File.deleteById({ id :  id})
 					.$promise
 					.then(function(res){
-						$http.delete('/api/containers/' + $scope.currentUser.folder + '/files/' + encodeURIComponent(name)).success(function (data, status, headers) {
+						$http.delete('/api/containers/' + $scope.currentUser.folder + '/files/' + encodeURIComponent(filename)).success(function (data, status, headers) {
 							$scope.files.splice(index, 1);
 					});
 				});
