@@ -18,20 +18,6 @@
 			"reconnectInterval": 1000
 		}
 	},
-	"mongolab-local": {
-		"host": "localhost",
-		"port": 27017,
-		"database": "heroku_f04xz8tc",
-		"username": "vrseum_admin",
-		"password": "PieroAugmenta15",
-		"name": "mongolab-local",
-		"connector": "mongodb",
-		"server": {
-			"auto_reconnect": true,
-			"reconnectTries": 100,
-			"reconnectInterval": 1000
-		}
-	},
 	"storage": {
 		"name": "storage",
 		"connector": "loopback-component-storage",
