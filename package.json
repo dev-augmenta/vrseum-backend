@@ -4,7 +4,7 @@
   "main": "server/server.js",
   "scripts": {
     "pretest": "jshint .",
-    "postinstall": "bower cache clean && bower install"
+    "postinstall": "bower install"
   },
   "engines": {
     "node": "5.9.1",
