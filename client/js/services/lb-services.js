@@ -1541,6 +1541,38 @@ module.factory(
 
         /**
          * @ngdoc method
+         * @name lbServices.AppUser#filesdesc
+         * @methodOf lbServices.AppUser
+         *
+         * @description
+         *
+         * Queries files of AppUser
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `id` – `{string}` - Model id
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * Data properties:
+         *
+         *  - `data` – `{string=}` -
+         */
+        "filesdesc": {
+          url: urlBase + "/AppUsers/:id/filesdesc",
+          method: "GET"
+        },
+
+        /**
+         * @ngdoc method
          * @name lbServices.AppUser#guidata
          * @methodOf lbServices.AppUser
          *

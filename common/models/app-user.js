@@ -27,6 +27,31 @@ module.exports = function(AppUser) {
 		}
 	);
 
+// GET ALL FILES OF THIS USER
+	AppUser.filesdesc = function( id, cb ){
+		AppUser.findById( id, function(error, instance){
+			var response = instance.folder;
+
+			var fd = AppUser.app.models.file;
+			var filter = { where : { container : instance.folder}};
+
+			fd.find(filter, function(error, data){
+				var response = data;
+				cb(null, response);
+			});
+		});
+	};
+
+	AppUser.remoteMethod(
+		'filesdesc',
+		{
+			description : 'Queries files of AppUser',
+			accepts :[ { arg: 'id', description: 'Model id', type: 'string', required : true}],
+			http : { path : '/:id/filesdesc', verb : 'get'},
+			returns : { arg: 'data', type : 'string'}
+		}
+	);
+
 	// GET ALL RESOURCE TO SHOW IN UNITY
 	AppUser.guidata = function( id, cb ){
 		// Read user info
@@ -42,21 +67,22 @@ module.exports = function(AppUser) {
 				listHaptics : []
 			};
 
-				AppUser.files( id, function(error, data){
+				AppUser.filesdesc( id, function(error, data){
 
 					// Add to response the assets list
 					_.each(data, function(element, index, list){
 
 						// check file extension and type
-						var fileName = path.parse(element.name).name;
-						var fileExtension = path.parse(element.name).ext;
+						var fileName = path.parse(element.url).name;
+						var fileExtension = path.parse(element.url).ext;
+						var description = element.description;
 
 						if( fileExtension === ".png" ||
 							fileExtension === ".jpg" ||
 							fileExtension === ".jpeg" )
 						{
-							var imgTbnImg = encodeURI(element.name);
-							var imgPicture = encodeURI(element.name);
+							var imgTbnImg = encodeURI(fileName+fileExtension);
+							var imgPicture = encodeURI(fileName+fileExtension);
 							var objUrl = "";
 							var objName = "";
 
@@ -64,7 +90,7 @@ module.exports = function(AppUser) {
 							response.listAssets.push({
 							ID_obj : "obj_" + index,
 							Name : fileName,
-							Description : fileName,
+							Description : description,
 							imgTbnImg : imgTbnImg,
 							imgPicture : imgPicture,
 							OBJ_URL : "",
@@ -74,7 +100,7 @@ module.exports = function(AppUser) {
 						}
 						else if ( fileExtension === ".obj")
 						{
-							var imgTbnImg = encodeURI(element.name);
+							var imgTbnImg = encodeURI(fileName+fileExtension);
 							var imgPicture = fileName + ".jpg";
 							var objUrl = "";
 							var objName = element.name;
@@ -83,7 +109,7 @@ module.exports = function(AppUser) {
 							response.listAssets.push({
 							ID_obj : "obj_" + index,
 							Name : fileName,
-							Description : fileName,
+							Description : description,
 							imgTbnImg : fileName + '.jpg',
 							imgPicture : "",
 							OBJ_URL : "",
